@@ -17,6 +17,15 @@
 		1909F7AF2338C339002998CF /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909F7AE2338C339002998CF /* ImageButton.swift */; };
 		1909F7B12338C4E6002998CF /* BigPrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909F7B02338C4E6002998CF /* BigPrimaryButton.swift */; };
 		1909F7B32338C7BF002998CF /* AddHashtagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1909F7B22338C7BF002998CF /* AddHashtagButton.swift */; };
+		192166952351E330001EFAE3 /* TransactionsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192166942351E330001EFAE3 /* TransactionsFeature.swift */; };
+		192166972351E359001EFAE3 /* TransactionsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192166962351E359001EFAE3 /* TransactionsActions.swift */; };
+		192166992351E3AD001EFAE3 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192166982351E3AD001EFAE3 /* Transaction.swift */; };
+		1921669B2351E3F9001EFAE3 /* Hashtag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921669A2351E3F9001EFAE3 /* Hashtag.swift */; };
+		1921669D2351E457001EFAE3 /* TransactionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921669C2351E457001EFAE3 /* TransactionFilter.swift */; };
+		1921669F2351E780001EFAE3 /* TransactionsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1921669E2351E780001EFAE3 /* TransactionsReducer.swift */; };
+		192166A12351E7A8001EFAE3 /* TransactionsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192166A02351E7A8001EFAE3 /* TransactionsState.swift */; };
+		192166A323520A0E001EFAE3 /* NumberFormatter+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192166A223520A0E001EFAE3 /* NumberFormatter+Currency.swift */; };
+		192166A523525557001EFAE3 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192166A423525557001EFAE3 /* HomeHeaderView.swift */; };
 		1930B77E23455024003C481C /* HomeBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930B77D23455024003C481C /* HomeBottomView.swift */; };
 		1930B78123455234003C481C /* CategoriesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930B78023455234003C481C /* CategoriesGridView.swift */; };
 		1930B783234552B0003C481C /* CategoriesGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930B782234552B0003C481C /* CategoriesGridItem.swift */; };
@@ -70,6 +79,15 @@
 		1909F7AE2338C339002998CF /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		1909F7B02338C4E6002998CF /* BigPrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigPrimaryButton.swift; sourceTree = "<group>"; };
 		1909F7B22338C7BF002998CF /* AddHashtagButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHashtagButton.swift; sourceTree = "<group>"; };
+		192166942351E330001EFAE3 /* TransactionsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFeature.swift; sourceTree = "<group>"; };
+		192166962351E359001EFAE3 /* TransactionsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsActions.swift; sourceTree = "<group>"; };
+		192166982351E3AD001EFAE3 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		1921669A2351E3F9001EFAE3 /* Hashtag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hashtag.swift; sourceTree = "<group>"; };
+		1921669C2351E457001EFAE3 /* TransactionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFilter.swift; sourceTree = "<group>"; };
+		1921669E2351E780001EFAE3 /* TransactionsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsReducer.swift; sourceTree = "<group>"; };
+		192166A02351E7A8001EFAE3 /* TransactionsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsState.swift; sourceTree = "<group>"; };
+		192166A223520A0E001EFAE3 /* NumberFormatter+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Currency.swift"; sourceTree = "<group>"; };
+		192166A423525557001EFAE3 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		1930B77D23455024003C481C /* HomeBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomView.swift; sourceTree = "<group>"; };
 		1930B78023455234003C481C /* CategoriesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGridView.swift; sourceTree = "<group>"; };
 		1930B782234552B0003C481C /* CategoriesGridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGridItem.swift; sourceTree = "<group>"; };
@@ -131,6 +149,7 @@
 				19CFD33723428F4E00D5A347 /* App */,
 				19DEB410234A1E4C004048D3 /* Categories */,
 				19CFD3442342A00400D5A347 /* Keyboard */,
+				192166932351E227001EFAE3 /* Transactions */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -152,6 +171,7 @@
 				1930B77D23455024003C481C /* HomeBottomView.swift */,
 				1909F7A12337B095002998CF /* CurrentTransactionValueView.swift */,
 				1909F79B2337A5EE002998CF /* HomeView.swift */,
+				192166A423525557001EFAE3 /* HomeHeaderView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -183,6 +203,17 @@
 				19DEA0B7234D36B80075552C /* ScaledButtonStyle.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		192166932351E227001EFAE3 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				192166962351E359001EFAE3 /* TransactionsActions.swift */,
+				192166942351E330001EFAE3 /* TransactionsFeature.swift */,
+				1921669E2351E780001EFAE3 /* TransactionsReducer.swift */,
+				192166A02351E7A8001EFAE3 /* TransactionsState.swift */,
+			);
+			path = Transactions;
 			sourceTree = "<group>";
 		};
 		1930B77F23455204003C481C /* CategoriesGrid */ = {
@@ -227,6 +258,9 @@
 				194A9B87234A18CE003F4C6A /* Category.swift */,
 				194A9B89234A198D003F4C6A /* CategoryIcon.swift */,
 				19DEB40E234A1DBD004048D3 /* CategoryStyle.swift */,
+				1921669A2351E3F9001EFAE3 /* Hashtag.swift */,
+				192166982351E3AD001EFAE3 /* Transaction.swift */,
+				1921669C2351E457001EFAE3 /* TransactionFilter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -346,6 +380,7 @@
 			children = (
 				19F6C0B4234D1A8C001352C7 /* Array+Chunked.swift */,
 				19DEB41A234A21F3004048D3 /* Array+Normalization.swift */,
+				192166A223520A0E001EFAE3 /* NumberFormatter+Currency.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -437,21 +472,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				192166A323520A0E001EFAE3 /* NumberFormatter+Currency.swift in Sources */,
 				1909F7A72337F6B4002998CF /* Images.swift in Sources */,
 				1909F7B12338C4E6002998CF /* BigPrimaryButton.swift in Sources */,
 				19DEB418234A2104004048D3 /* CategoriesReducer.swift in Sources */,
 				19CFD3402342912500D5A347 /* AppReducer.swift in Sources */,
 				19CFD342234292C800D5A347 /* AppState.swift in Sources */,
+				192166992351E3AD001EFAE3 /* Transaction.swift in Sources */,
 				19F6C0B7234D281C001352C7 /* CategoriesGridRow.swift in Sources */,
+				192166972351E359001EFAE3 /* TransactionsActions.swift in Sources */,
+				1921669B2351E3F9001EFAE3 /* Hashtag.swift in Sources */,
+				1921669F2351E780001EFAE3 /* TransactionsReducer.swift in Sources */,
 				1909F7AA2338C15A002998CF /* DigitButton.swift in Sources */,
 				1909F7AF2338C339002998CF /* ImageButton.swift in Sources */,
 				19CFD3482342A03900D5A347 /* KeyboardActions.swift in Sources */,
 				1930B783234552B0003C481C /* CategoriesGridItem.swift in Sources */,
 				1909F7A22337B095002998CF /* CurrentTransactionValueView.swift in Sources */,
+				192166A12351E7A8001EFAE3 /* TransactionsState.swift in Sources */,
 				19F6C0B5234D1A8C001352C7 /* Array+Chunked.swift in Sources */,
 				19DEB40F234A1DBD004048D3 /* CategoryStyle.swift in Sources */,
 				194A9B88234A18CE003F4C6A /* Category.swift in Sources */,
 				1909F7A52337F310002998CF /* Colors.swift in Sources */,
+				192166A523525557001EFAE3 /* HomeHeaderView.swift in Sources */,
 				193D5AD723427AF000E0FB19 /* Fonts.swift in Sources */,
 				194A9B8A234A198D003F4C6A /* CategoryIcon.swift in Sources */,
 				19CFD33E234290E500D5A347 /* LoggingMiddleware.swift in Sources */,
@@ -467,12 +509,14 @@
 				19DEB412234A1E66004048D3 /* CategoriesFeature.swift in Sources */,
 				1930B78123455234003C481C /* CategoriesGridView.swift in Sources */,
 				19DEB41B234A21F3004048D3 /* Array+Normalization.swift in Sources */,
+				1921669D2351E457001EFAE3 /* TransactionFilter.swift in Sources */,
 				1909F79F2337A66A002998CF /* KeyboardView.swift in Sources */,
 				19DEB416234A1F05004048D3 /* CategoriesActions.swift in Sources */,
 				1909F79C2337A5EE002998CF /* HomeView.swift in Sources */,
 				19CFD34A2342A36300D5A347 /* KeyboardReducer.swift in Sources */,
 				19CFD33923428FC800D5A347 /* AppFeature.swift in Sources */,
 				197804A52337A22C0032DD76 /* SceneDelegate.swift in Sources */,
+				192166952351E330001EFAE3 /* TransactionsFeature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

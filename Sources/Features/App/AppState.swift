@@ -11,10 +11,12 @@ extension AppFeature {
     struct State: FluxState, Codable {
         var keyboardState: KeyboardFeature.State
         var categoriesState: CategoriesFeature.State
+        var transactionsState: TransactionsFeature.State
 
         static let initial = State(
             keyboardState: .initial,
-            categoriesState: .initial
+            categoriesState: .initial,
+            transactionsState: .initial
         )
     }
 }

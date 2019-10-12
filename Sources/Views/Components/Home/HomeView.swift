@@ -19,27 +19,7 @@ struct HomeView: View {
 
             VStack {
                 HStack(alignment: .bottom) {
-                    VStack {
-                        HStack {
-                            Text("125,52 BYN")
-                                .font(.caption).fontWeight(.heavy)
-                                .foregroundColor(.secondaryLabel)
-                            Spacer()
-                        }
-                        HStack(alignment: .firstTextBaseline, spacing: 4) {
-                            Text("Расходы")
-                                .font(.title).fontWeight(.heavy)
-                                .foregroundColor(.label)
-
-                            Button(action: {}) {
-                                Text("за день")
-                                    .font(.headline).fontWeight(.heavy)
-                                    .foregroundColor(.primaryColor)
-                            }
-
-                            Spacer()
-                        }
-                    }
+                    HomeHeaderView()
 
                     VStack(spacing: 0) {
                         Button(action: {}) {
@@ -74,6 +54,9 @@ struct HomeView: View {
                 HomeBottomView()
             }
             .padding(16)
+        }
+        .onAppear {
+            self.store.dispatch(action: TransactionsFeature.Actions.LoadTransactions())
         }
     }
 

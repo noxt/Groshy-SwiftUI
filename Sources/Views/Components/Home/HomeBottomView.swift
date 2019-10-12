@@ -11,11 +11,34 @@ struct HomeBottomView: ConnectedView {
 
     struct Props {
         let currentValue: String
+        let createTransactionAction: Action?
     }
 
     func map(state: AppFeature.State, dispatch: @escaping DispatchFunction) -> Props {
+        var action: Action?
+        if let transaction = createTransactionCommand(for: state) {
+            action = TransactionsFeature.Actions.SaveTransaction(transaction: transaction)
+        }
+
         return Props(
-            currentValue: state.keyboardState.currentValue
+            currentValue: state.keyboardState.currentValue,
+            createTransactionAction: action
+        )
+    }
+
+    private func createTransactionCommand(for state: AppFeature.State) -> Transaction? {
+        guard let categoryID = state.categoriesState.selectedCategory,
+            let value = NumberFormatter.currency.number(from: state.keyboardState.currentValue),
+            value.doubleValue > 0 else {
+                return nil
+        }
+
+        return Transaction(
+            id: UUID(),
+            categoryID: categoryID,
+            hashtagID: nil,
+            value: value.doubleValue,
+            date: Date()
         )
     }
 
@@ -30,7 +53,12 @@ struct HomeBottomView: ConnectedView {
 
             HStack(spacing: 0) {
                 ImageButton(image: Image.Buttons.calendar, action: {})
-                BigPrimaryButton(title: "Зачислить", action: {})
+                BigPrimaryButton(title: "Зачислить", action: {
+                    if let action = props.createTransactionAction {
+                        store.dispatch(action: action)
+                    }
+                })
+                .disabled(props.createTransactionAction == nil)
             }
         }
     }

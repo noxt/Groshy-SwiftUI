@@ -25,7 +25,7 @@ extension CategoriesFeature {
         case let action as Actions.SelectCategory:
             state.selectedCategory = action.id
 
-        case let action as Actions.SetCategoriesList:
+        case let action as Actions.SetCategories:
             state.categories = action.categories.normalized
             state.sortOrder = action.categories.map({ $0.id })
 

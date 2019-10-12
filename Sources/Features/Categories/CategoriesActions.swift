@@ -22,7 +22,7 @@ extension CategoriesFeature {
 
         }
 
-        struct SetCategoriesList: Action {
+        struct SetCategories: Action {
             let categories: [Category]
         }
 
@@ -38,7 +38,7 @@ extension CategoriesFeature {
                     Category(id: UUID(), title: "Категория 7", icon: .random(), style: .random()),
                     Category(id: UUID(), title: "Категория 8", icon: .random(), style: .random()),
                 ]
-                dispatch(Actions.SetCategoriesList(categories: categories))
+                dispatch(Actions.SetCategories(categories: categories))
             }
         }
 

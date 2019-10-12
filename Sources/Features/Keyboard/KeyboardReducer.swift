@@ -21,7 +21,7 @@ extension KeyboardFeature {
             }
 
         case is Actions.AddComma:
-            guard let commaCharacter = NumberFormatter().decimalSeparator,
+            guard let commaCharacter = NumberFormatter.currency.decimalSeparator,
                 state.currentValue.firstIndex(of: commaCharacter.first!) == nil else {
                     break
             }
@@ -38,6 +38,9 @@ extension KeyboardFeature {
             }
 
         case is Actions.RemoveAll:
+            state.currentValue = "0"
+
+        case is TransactionsFeature.Actions.SaveTransaction:
             state.currentValue = "0"
 
         default:

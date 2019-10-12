@@ -12,6 +12,7 @@ extension AppFeature {
         var state = state
         state.keyboardState = KeyboardFeature.reduce(state: state.keyboardState, action: action)
         state.categoriesState = CategoriesFeature.reduce(state: state.categoriesState, action: action)
+        state.transactionsState = TransactionsFeature.reduce(state: state.transactionsState, action: action)
         return state
     }
 }

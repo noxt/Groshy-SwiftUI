@@ -17,6 +17,7 @@ extension CategoriesGridView {
             let icon: Category.Icon
             let style: Category.Style
             let dispatch: DispatchFunction
+            let selectCategoryAction: Action?
         }
 
         let categoryId: Category.ID
@@ -25,18 +26,32 @@ extension CategoriesGridView {
         func map(state: AppFeature.State, dispatch: @escaping DispatchFunction) -> Props {
             let category = state.categoriesState.categories[categoryId]!
 
+            var selectCategoryAction: Action?
+            if state.categoriesState.selectedCategory != categoryId {
+                selectCategoryAction = CategoriesFeature.Actions.SelectCategory(id: self.categoryId)
+            }
+
+            let value = state.transactionsState.transactionsForCategory(categoryId).reduce(0) { (result, transaction) -> Double in
+                result + transaction.value
+            }
+
             return Props(
                 title: category.title,
-                value: "22,16",
+                value: NumberFormatter.currency.string(from: NSNumber(value: value)) ?? "0",
                 isSelected: category.id == state.categoriesState.selectedCategory,
                 icon: category.icon,
                 style: category.style,
-                dispatch: dispatch
+                dispatch: dispatch,
+                selectCategoryAction: selectCategoryAction
             )
         }
 
         func body(props: CategoriesGridView.Cell.Props) -> some View {
-            Button(action: { props.dispatch(CategoriesFeature.Actions.SelectCategory(id: self.categoryId)) }) {
+            Button(action: {
+                if let action = props.selectCategoryAction {
+                    props.dispatch(action)
+                }
+            }) {
                 VStack {
                     Spacer(minLength: 8)
 
@@ -60,6 +75,7 @@ extension CategoriesGridView {
                 .background(props.backgroundColor.cornerRadius(4))
             }
             .buttonStyle(ScaledButtonStyle())
+            .disabled(props.selectCategoryAction == nil)
         }
 
     }

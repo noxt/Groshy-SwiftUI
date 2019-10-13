@@ -12,7 +12,7 @@ extension CategoriesGridView {
 
         struct Props {
             let title: String
-            let value: String
+            let value: Double
             let isSelected: Bool
             let icon: Category.Icon
             let style: Category.Style
@@ -37,7 +37,7 @@ extension CategoriesGridView {
 
             return Props(
                 title: category.title,
-                value: NumberFormatter.currency.string(from: NSNumber(value: value)) ?? "0",
+                value: value,
                 isSelected: category.id == state.categoriesState.selectedCategory,
                 icon: category.icon,
                 style: category.style,
@@ -64,7 +64,7 @@ extension CategoriesGridView {
                         .overlay(props.image)
                         .frame(width: 40, height: 40)
 
-                    Text(props.value)
+                    Text("\(NSNumber(value: props.value), formatter: NumberFormatter.currency)")
                         .font(Font.Rubik.Medium(size: 11))
                         .foregroundColor(props.valueColor)
 

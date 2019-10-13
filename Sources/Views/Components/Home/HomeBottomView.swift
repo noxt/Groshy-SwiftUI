@@ -14,6 +14,8 @@ struct HomeBottomView: ConnectedView {
         let createTransactionAction: Action?
     }
 
+    @State private var isAddingHashtagPresented = false
+
     func map(state: AppFeature.State, dispatch: @escaping DispatchFunction) -> Props {
         var action: Action?
         if let transaction = createTransactionCommand(for: state) {
@@ -46,7 +48,9 @@ struct HomeBottomView: ConnectedView {
         VStack(spacing: 7) {
             HStack(spacing: 4) {
                 CurrentTransactionValueView(title: props.currentValue)
-                AddHashtagButton(action: {})
+                AddHashtagButton(action: {
+                    self.isAddingHashtagPresented = true
+                })
             }
 
             KeyboardView()
@@ -60,6 +64,9 @@ struct HomeBottomView: ConnectedView {
                 })
                 .disabled(props.createTransactionAction == nil)
             }
+        }
+        .sheet(isPresented: $isAddingHashtagPresented) {
+            AddHashtagView(isPresented: self.$isAddingHashtagPresented).environmentObject(store)
         }
     }
 

@@ -59,7 +59,7 @@ struct KeyboardView: ConnectedView {
             }
 
             HStack(spacing: 7) {
-                DigitButton(title: ",", action: {
+                DigitButton(title: NumberFormatter.currency.decimalSeparator, action: {
                     props.dispatch(KeyboardFeature.Actions.AddComma())
                 })
                 DigitButton(title: "0", action: {

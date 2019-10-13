@@ -12,11 +12,13 @@ extension AppFeature {
         var keyboardState: KeyboardFeature.State
         var categoriesState: CategoriesFeature.State
         var transactionsState: TransactionsFeature.State
+        var hashtagsState: HashtagsFeature.State
 
         static let initial = State(
             keyboardState: .initial,
             categoriesState: .initial,
-            transactionsState: .initial
+            transactionsState: .initial,
+            hashtagsState: .initial
         )
     }
 }

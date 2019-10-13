@@ -26,6 +26,14 @@
 		192166A12351E7A8001EFAE3 /* TransactionsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192166A02351E7A8001EFAE3 /* TransactionsState.swift */; };
 		192166A323520A0E001EFAE3 /* NumberFormatter+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192166A223520A0E001EFAE3 /* NumberFormatter+Currency.swift */; };
 		192166A523525557001EFAE3 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192166A423525557001EFAE3 /* HomeHeaderView.swift */; };
+		192166A8235264A2001EFAE3 /* HashtagsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192166A7235264A2001EFAE3 /* HashtagsFeature.swift */; };
+		192166AA235264C0001EFAE3 /* HashtagsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192166A9235264C0001EFAE3 /* HashtagsState.swift */; };
+		192166AC23526532001EFAE3 /* HashtagsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192166AB23526532001EFAE3 /* HashtagsActions.swift */; };
+		192166AE23526877001EFAE3 /* HashtagsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192166AD23526877001EFAE3 /* HashtagsReducer.swift */; };
+		192166B123526E3D001EFAE3 /* AddHashtagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192166B023526E3D001EFAE3 /* AddHashtagView.swift */; };
+		192166B3235375C7001EFAE3 /* AdaptsToSoftwareKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192166B2235375C7001EFAE3 /* AdaptsToSoftwareKeyboard.swift */; };
+		192166B5235377AB001EFAE3 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192166B4235377AB001EFAE3 /* CustomTextField.swift */; };
+		192166B7235392D1001EFAE3 /* HashtagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192166B6235392D1001EFAE3 /* HashtagView.swift */; };
 		1930B77E23455024003C481C /* HomeBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930B77D23455024003C481C /* HomeBottomView.swift */; };
 		1930B78123455234003C481C /* CategoriesGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930B78023455234003C481C /* CategoriesGridView.swift */; };
 		1930B783234552B0003C481C /* CategoriesGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1930B782234552B0003C481C /* CategoriesGridItem.swift */; };
@@ -88,6 +96,14 @@
 		192166A02351E7A8001EFAE3 /* TransactionsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsState.swift; sourceTree = "<group>"; };
 		192166A223520A0E001EFAE3 /* NumberFormatter+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Currency.swift"; sourceTree = "<group>"; };
 		192166A423525557001EFAE3 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		192166A7235264A2001EFAE3 /* HashtagsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsFeature.swift; sourceTree = "<group>"; };
+		192166A9235264C0001EFAE3 /* HashtagsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsState.swift; sourceTree = "<group>"; };
+		192166AB23526532001EFAE3 /* HashtagsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsActions.swift; sourceTree = "<group>"; };
+		192166AD23526877001EFAE3 /* HashtagsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsReducer.swift; sourceTree = "<group>"; };
+		192166B023526E3D001EFAE3 /* AddHashtagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHashtagView.swift; sourceTree = "<group>"; };
+		192166B2235375C7001EFAE3 /* AdaptsToSoftwareKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptsToSoftwareKeyboard.swift; sourceTree = "<group>"; };
+		192166B4235377AB001EFAE3 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		192166B6235392D1001EFAE3 /* HashtagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagView.swift; sourceTree = "<group>"; };
 		1930B77D23455024003C481C /* HomeBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomView.swift; sourceTree = "<group>"; };
 		1930B78023455234003C481C /* CategoriesGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGridView.swift; sourceTree = "<group>"; };
 		1930B782234552B0003C481C /* CategoriesGridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGridItem.swift; sourceTree = "<group>"; };
@@ -148,6 +164,7 @@
 			children = (
 				19CFD33723428F4E00D5A347 /* App */,
 				19DEB410234A1E4C004048D3 /* Categories */,
+				192166A62352648E001EFAE3 /* Hashtags */,
 				19CFD3442342A00400D5A347 /* Keyboard */,
 				192166932351E227001EFAE3 /* Transactions */,
 			);
@@ -157,6 +174,7 @@
 		1909F7992337A5AF002998CF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				192166AF23526E1D001EFAE3 /* AddHashtag */,
 				1930B77F23455204003C481C /* CategoriesGrid */,
 				1909F79D2337A65B002998CF /* Keyboard */,
 				1909F79A2337A5CC002998CF /* Home */,
@@ -168,10 +186,10 @@
 			isa = PBXGroup;
 			children = (
 				1909F7B22338C7BF002998CF /* AddHashtagButton.swift */,
-				1930B77D23455024003C481C /* HomeBottomView.swift */,
 				1909F7A12337B095002998CF /* CurrentTransactionValueView.swift */,
-				1909F79B2337A5EE002998CF /* HomeView.swift */,
+				1930B77D23455024003C481C /* HomeBottomView.swift */,
 				192166A423525557001EFAE3 /* HomeHeaderView.swift */,
+				1909F79B2337A5EE002998CF /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -198,7 +216,9 @@
 		1909F7AD2338C2E8002998CF /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				192166B2235375C7001EFAE3 /* AdaptsToSoftwareKeyboard.swift */,
 				1909F7B02338C4E6002998CF /* BigPrimaryButton.swift */,
+				192166B4235377AB001EFAE3 /* CustomTextField.swift */,
 				1909F7AE2338C339002998CF /* ImageButton.swift */,
 				19DEA0B7234D36B80075552C /* ScaledButtonStyle.swift */,
 			);
@@ -214,6 +234,26 @@
 				192166A02351E7A8001EFAE3 /* TransactionsState.swift */,
 			);
 			path = Transactions;
+			sourceTree = "<group>";
+		};
+		192166A62352648E001EFAE3 /* Hashtags */ = {
+			isa = PBXGroup;
+			children = (
+				192166AB23526532001EFAE3 /* HashtagsActions.swift */,
+				192166A7235264A2001EFAE3 /* HashtagsFeature.swift */,
+				192166AD23526877001EFAE3 /* HashtagsReducer.swift */,
+				192166A9235264C0001EFAE3 /* HashtagsState.swift */,
+			);
+			path = Hashtags;
+			sourceTree = "<group>";
+		};
+		192166AF23526E1D001EFAE3 /* AddHashtag */ = {
+			isa = PBXGroup;
+			children = (
+				192166B023526E3D001EFAE3 /* AddHashtagView.swift */,
+				192166B6235392D1001EFAE3 /* HashtagView.swift */,
+			);
+			path = AddHashtag;
 			sourceTree = "<group>";
 		};
 		1930B77F23455204003C481C /* CategoriesGrid */ = {
@@ -472,10 +512,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				192166B5235377AB001EFAE3 /* CustomTextField.swift in Sources */,
 				192166A323520A0E001EFAE3 /* NumberFormatter+Currency.swift in Sources */,
+				192166B123526E3D001EFAE3 /* AddHashtagView.swift in Sources */,
 				1909F7A72337F6B4002998CF /* Images.swift in Sources */,
 				1909F7B12338C4E6002998CF /* BigPrimaryButton.swift in Sources */,
+				192166B3235375C7001EFAE3 /* AdaptsToSoftwareKeyboard.swift in Sources */,
 				19DEB418234A2104004048D3 /* CategoriesReducer.swift in Sources */,
+				192166AC23526532001EFAE3 /* HashtagsActions.swift in Sources */,
 				19CFD3402342912500D5A347 /* AppReducer.swift in Sources */,
 				19CFD342234292C800D5A347 /* AppState.swift in Sources */,
 				192166992351E3AD001EFAE3 /* Transaction.swift in Sources */,
@@ -493,18 +537,21 @@
 				19DEB40F234A1DBD004048D3 /* CategoryStyle.swift in Sources */,
 				194A9B88234A18CE003F4C6A /* Category.swift in Sources */,
 				1909F7A52337F310002998CF /* Colors.swift in Sources */,
+				192166B7235392D1001EFAE3 /* HashtagView.swift in Sources */,
 				192166A523525557001EFAE3 /* HomeHeaderView.swift in Sources */,
 				193D5AD723427AF000E0FB19 /* Fonts.swift in Sources */,
 				194A9B8A234A198D003F4C6A /* CategoryIcon.swift in Sources */,
 				19CFD33E234290E500D5A347 /* LoggingMiddleware.swift in Sources */,
 				19CFD33B2342902E00D5A347 /* AppAction.swift in Sources */,
 				19DEA0B8234D36B80075552C /* ScaledButtonStyle.swift in Sources */,
+				192166AA235264C0001EFAE3 /* HashtagsState.swift in Sources */,
 				19CFD3462342A00D00D5A347 /* KeyboardFeature.swift in Sources */,
 				19DEB414234A1E9D004048D3 /* CategoriesState.swift in Sources */,
 				1909F7B32338C7BF002998CF /* AddHashtagButton.swift in Sources */,
 				1930B77E23455024003C481C /* HomeBottomView.swift in Sources */,
 				197804A32337A22C0032DD76 /* AppDelegate.swift in Sources */,
 				1909F7AC2338C242002998CF /* DeleteButton.swift in Sources */,
+				192166A8235264A2001EFAE3 /* HashtagsFeature.swift in Sources */,
 				19CFD34C2342A39000D5A347 /* KeyboardState.swift in Sources */,
 				19DEB412234A1E66004048D3 /* CategoriesFeature.swift in Sources */,
 				1930B78123455234003C481C /* CategoriesGridView.swift in Sources */,
@@ -517,6 +564,7 @@
 				19CFD33923428FC800D5A347 /* AppFeature.swift in Sources */,
 				197804A52337A22C0032DD76 /* SceneDelegate.swift in Sources */,
 				192166952351E330001EFAE3 /* TransactionsFeature.swift in Sources */,
+				192166AE23526877001EFAE3 /* HashtagsReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

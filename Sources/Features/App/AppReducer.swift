@@ -13,6 +13,7 @@ extension AppFeature {
         state.keyboardState = KeyboardFeature.reduce(state: state.keyboardState, action: action)
         state.categoriesState = CategoriesFeature.reduce(state: state.categoriesState, action: action)
         state.transactionsState = TransactionsFeature.reduce(state: state.transactionsState, action: action)
+        state.hashtagsState = HashtagsFeature.reduce(state: state.hashtagsState, action: action)
         return state
     }
 }

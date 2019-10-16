@@ -9,6 +9,11 @@ import SwiftUIFlux
 
 extension HashtagsFeature {
     enum Actions {
+
+        struct SaveHashtag: Action {
+            let hashtag: Hashtag
+        }
+
         struct LoadHashtags: AsyncAction {
             func execute(state: FluxState?, dispatch: @escaping DispatchFunction) {
 

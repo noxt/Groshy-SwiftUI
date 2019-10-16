@@ -22,5 +22,6 @@ struct HashtagView: View {
         .padding(8)
         .background(Color.secondaryBackground)
         .cornerRadius(4)
+        .buttonStyle(ScaledButtonStyle())
     }
 }

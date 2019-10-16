@@ -22,6 +22,13 @@ extension HashtagsFeature {
         case is Actions.ClearSelectedHashtag:
             state.selectedHashtag = nil
 
+        case let action as Actions.SaveHashtag:
+            state.hashtags[action.hashtag.id] = action.hashtag
+            state.selectedHashtag = action.hashtag.id
+
+        case is TransactionsFeature.Actions.SaveTransaction:
+            state.selectedHashtag = nil
+
         default:
             break
         }

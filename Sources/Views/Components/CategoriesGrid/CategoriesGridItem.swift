@@ -58,6 +58,7 @@ extension CategoriesGridView {
                     Text(props.title)
                         .font(Font.Rubik.Regular(size: 11))
                         .foregroundColor(props.titleColor)
+                        .padding(.horizontal, 4)
 
                     props.iconCircleColor
                         .clipShape(Circle())
@@ -67,6 +68,7 @@ extension CategoriesGridView {
                     Text("\(NSNumber(value: props.value), formatter: NumberFormatter.currency)")
                         .font(Font.Rubik.Medium(size: 11))
                         .foregroundColor(props.valueColor)
+                        .padding(.horizontal, 4)
 
                     Spacer(minLength: 8)
                 }

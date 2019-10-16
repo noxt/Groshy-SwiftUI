@@ -11,7 +11,11 @@ struct HomeHeaderView: ConnectedView {
 
     struct Props {
         let value: Double
+        let filter: TransactionFilter
+        let dispatch: DispatchFunction
     }
+
+    @State private var isFilterSelectPresented = false
 
     func map(state: AppFeature.State, dispatch: @escaping DispatchFunction) -> Props {
         let value = state.transactionsState.filteredTransactions.reduce(0) { (result, transaction) -> Double in
@@ -19,7 +23,9 @@ struct HomeHeaderView: ConnectedView {
         }
 
         return Props(
-            value: value
+            value: value,
+            filter: state.transactionsState.filter,
+            dispatch: dispatch
         )
     }
 
@@ -36,14 +42,23 @@ struct HomeHeaderView: ConnectedView {
                     .font(.title).fontWeight(.heavy)
                     .foregroundColor(.label)
 
-                Button(action: {}) {
-                    Text("за день")
+                Button(action: { self.isFilterSelectPresented = true }) {
+                    Text(props.filter.title)
                         .font(.headline).fontWeight(.heavy)
                         .foregroundColor(.primaryColor)
                 }
 
                 Spacer()
             }
+        }
+        .actionSheet(isPresented: $isFilterSelectPresented) { () -> ActionSheet in
+            var buttons = TransactionFilter.allCases.map { (filter) -> ActionSheet.Button in
+                .default(Text(filter.title)) {
+                    props.dispatch(TransactionsFeature.Actions.SetFilter(filter: filter))
+                }
+            }
+            buttons.append(.cancel(Text("Отмена")))
+            return ActionSheet(title: Text("Видеть расходы"), message: nil, buttons: buttons)
         }
     }
 }

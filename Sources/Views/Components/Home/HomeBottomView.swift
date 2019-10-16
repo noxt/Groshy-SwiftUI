@@ -11,6 +11,7 @@ struct HomeBottomView: ConnectedView {
 
     struct Props {
         let currentValue: String
+        let isHashtagSelected: Bool
         let createTransactionAction: Action?
     }
 
@@ -18,17 +19,18 @@ struct HomeBottomView: ConnectedView {
 
     func map(state: AppFeature.State, dispatch: @escaping DispatchFunction) -> Props {
         var action: Action?
-        if let transaction = createTransactionCommand(for: state) {
+        if let transaction = createTransaction(for: state) {
             action = TransactionsFeature.Actions.SaveTransaction(transaction: transaction)
         }
 
         return Props(
             currentValue: state.keyboardState.currentValue,
+            isHashtagSelected: state.hashtagsState.selectedHashtag != nil,
             createTransactionAction: action
         )
     }
 
-    private func createTransactionCommand(for state: AppFeature.State) -> Transaction? {
+    private func createTransaction(for state: AppFeature.State) -> Transaction? {
         guard let categoryID = state.categoriesState.selectedCategory,
             let value = NumberFormatter.currency.number(from: state.keyboardState.currentValue),
             value.doubleValue > 0 else {
@@ -38,7 +40,7 @@ struct HomeBottomView: ConnectedView {
         return Transaction(
             id: UUID(),
             categoryID: categoryID,
-            hashtagID: nil,
+            hashtagID: state.hashtagsState.selectedHashtag,
             value: value.doubleValue,
             date: Date()
         )
@@ -48,9 +50,12 @@ struct HomeBottomView: ConnectedView {
         VStack(spacing: 7) {
             HStack(spacing: 4) {
                 CurrentTransactionValueView(title: props.currentValue)
-                AddHashtagButton(action: {
-                    self.isAddingHashtagPresented = true
-                })
+                AddHashtagButton(
+                    isSelected: props.isHashtagSelected,
+                    action: {
+                        self.isAddingHashtagPresented = true
+                    }
+                )
             }
 
             KeyboardView()

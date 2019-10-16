@@ -23,26 +23,27 @@ struct HomeView: View {
 
                     VStack(spacing: 0) {
                         Button(action: {}) {
-                            HStack(alignment: .bottom) {
+                            ZStack {
                                 Image.Buttons.settings
                                     .resizable()
                                     .frame(width: 18, height: 18)
                                     .foregroundColor(.button)
+                                    .offset(x: 0, y: 5)
                             }
                             .frame(width: 40, height: 40)
                         }
 
                         Button(action: {}) {
                             ZStack {
-                                Image.Buttons.filter
+                                Image.Buttons.statistics
                                     .resizable()
-                                    .frame(width: 18, height: 18)
+                                    .frame(width: 18, height: 12)
                                     .foregroundColor(.button)
                             }
                             .frame(width: 40, height: 40)
                         }
                     }
-                    .padding(EdgeInsets(top: -16, leading: 0, bottom: 0, trailing: -8))
+                    .padding(EdgeInsets(top: -15, leading: 0, bottom: -5, trailing: -8))
                 }
 
                 Spacer()

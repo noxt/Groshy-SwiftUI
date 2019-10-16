@@ -13,6 +13,7 @@ extension Image {
         static let delete = Image("images/buttons/delete")
         static let filter = Image("images/buttons/filter")
         static let settings = Image("images/buttons/settings")
+        static let statistics = Image("images/buttons/statistics")
         static let cancel = Image("images/buttons/cancel")
         static let save = Image("images/buttons/save")
     }

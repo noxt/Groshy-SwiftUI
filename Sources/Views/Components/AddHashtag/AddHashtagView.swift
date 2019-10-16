@@ -11,15 +11,36 @@ import SwiftUIFlux
 struct AddHashtagView: ConnectedView {
 
     struct Props {
-
+        let hashtags: [Hashtag]
+        let createHashtagAction: Action?
+        let dispatch: DispatchFunction
     }
 
     @Binding var isPresented: Bool
     @State private var hashtagValue = ""
 
     func map(state: AppFeature.State, dispatch: @escaping DispatchFunction) -> Props {
+        var createHashtagAction: Action?
+        if let hashtag = createHashtag(for: state) {
+            createHashtagAction = HashtagsFeature.Actions.SaveHashtag(hashtag: hashtag)
+        }
         return Props(
+            hashtags: Array(state.hashtagsState.hashtags.values),
+            createHashtagAction: createHashtagAction,
+            dispatch: dispatch
         )
+    }
+
+    private func createHashtag(for state: AppFeature.State) -> Hashtag? {
+        guard !hashtagValue.isEmpty else {
+            return nil
+        }
+
+        if let hashtag = state.hashtagsState.hashtags.values.first(where: { $0.title == hashtagValue }) {
+            return hashtag
+        } else {
+            return Hashtag(id: UUID(), title: hashtagValue)
+        }
     }
 
     func body(props: AddHashtagView.Props) -> some View {
@@ -28,8 +49,14 @@ struct AddHashtagView: ConnectedView {
                 ImageButton(image: Image.Buttons.cancel, action: { self.isPresented = false })
                     .offset(x: -10, y: -10)
                 Spacer()
-                ImageButton(image: Image.Buttons.save, action: { print(self.hashtagValue) })
+                ImageButton(image: Image.Buttons.save, action: {
+                    if let action = props.createHashtagAction {
+                        props.dispatch(action)
+                        self.isPresented = false
+                    }
+                })
                     .offset(x: 10, y: -10)
+                    .disabled(props.createHashtagAction == nil)
             }
 
             Spacer()
@@ -49,30 +76,46 @@ struct AddHashtagView: ConnectedView {
 
             Spacer()
 
-            ScrollView(.horizontal, showsIndicators: false) {
-                VStack(alignment: .leading) {
-                    HStack {
-                        HashtagView(hashtag: Hashtag(id: UUID(), title: "Корона"))
-                        HashtagView(hashtag: Hashtag(id: UUID(), title: "BigZ"))
-                        HashtagView(hashtag: Hashtag(id: UUID(), title: "NYX"))
-                        HashtagView(hashtag: Hashtag(id: UUID(), title: "Газпром"))
-                    }
-
-                    HStack {
-                        HashtagView(hashtag: Hashtag(id: UUID(), title: "KFC"))
-                        HashtagView(hashtag: Hashtag(id: UUID(), title: "Burger King"))
-                        HashtagView(hashtag: Hashtag(id: UUID(), title: "MC Donalds"))
-                        HashtagView(hashtag: Hashtag(id: UUID(), title: "Salateira"))
-                    }
-                }
-                .padding(.horizontal, 16)
+            if !props.hashtags.isEmpty {
+                HashtagsListView(for: props)
             }
-            .padding(.horizontal, -16)
-
         }
         .padding(16)
         .background(Color.background)
         .modifier(AdaptsToSoftwareKeyboard())
+    }
+
+    private func HashtagsListView(for props: Props) -> some View {
+        var topHashtags: [Hashtag] = []
+        var bottomHashtags: [Hashtag] = []
+        for (index, hashtag) in props.hashtags.enumerated() {
+            if index % 2 == 0 {
+                topHashtags.append(hashtag)
+            } else {
+                bottomHashtags.append(hashtag)
+            }
+        }
+
+        return ScrollView(.horizontal, showsIndicators: false) {
+            VStack(alignment: .leading) {
+                HashtagsListRow(for: props, hashtags: topHashtags)
+                HashtagsListRow(for: props, hashtags: bottomHashtags)
+            }
+            .padding(.horizontal, 16)
+        }
+        .padding(.horizontal, -16)
+    }
+
+    private func HashtagsListRow(for props: Props, hashtags: [Hashtag]) -> some View {
+        HStack {
+            ForEach(hashtags) { hashtag in
+                HashtagView(hashtag: hashtag)
+                    .onTapGesture {
+                        props.dispatch(HashtagsFeature.Actions.SelectHashtag(id: hashtag.id))
+                        self.isPresented = false
+                    }
+            }
+        }
     }
 
 }

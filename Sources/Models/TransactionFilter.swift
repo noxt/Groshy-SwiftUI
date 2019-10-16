@@ -13,3 +13,21 @@ enum TransactionFilter: Int, CaseIterable, Codable {
     case perYear
     case allTime
 }
+
+
+extension TransactionFilter {
+    var title: String {
+        switch self {
+        case .perDay:
+            return "за день"
+        case .perWeek:
+            return "за неделю"
+        case .perMonth:
+            return "за месяц"
+        case .perYear:
+            return "за год"
+        case .allTime:
+            return "за все время"
+        }
+    }
+}

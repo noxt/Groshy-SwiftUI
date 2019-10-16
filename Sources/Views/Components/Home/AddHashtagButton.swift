@@ -9,13 +9,14 @@ import SwiftUI
 extension HomeBottomView {
     struct AddHashtagButton: View {
 
+        let isSelected: Bool
         let action: () -> Void
 
         var body: some View {
             Button(action: action) {
                 Text("#")
                     .font(Font.Rubik.Medium(size: 32))
-                    .foregroundColor(.button)
+                    .foregroundColor(isSelected ? .focused : .button)
                     .frame(width: 50, height: 50)
                     .background(Color.background)
             }

@@ -16,6 +16,12 @@ extension Color {
     static let primaryColor = Color("Colors/Primary")
     static let secondary = Color("Colors/Secondary")
 
+
+    enum Categories {
+        static let plusTitle = Color("Colors/Categories/Plus Title")
+        static let plusIcon = Color("Colors/Categories/Plus Icon")
+    }
+
     static func category(_ index: Int) -> Color {
         return Color("Colors/Categories/Style \(index)")
     }

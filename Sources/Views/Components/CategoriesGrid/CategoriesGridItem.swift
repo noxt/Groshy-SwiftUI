@@ -53,12 +53,11 @@ extension CategoriesGridView {
                 }
             }) {
                 VStack {
-                    Spacer(minLength: 8)
-
                     Text(props.title)
                         .font(Font.Rubik.Regular(size: 11))
                         .foregroundColor(props.titleColor)
                         .padding(.horizontal, 4)
+                        .padding(.top, 8)
 
                     props.iconCircleColor
                         .clipShape(Circle())
@@ -69,11 +68,9 @@ extension CategoriesGridView {
                         .font(Font.Rubik.Medium(size: 11))
                         .foregroundColor(props.valueColor)
                         .padding(.horizontal, 4)
-
-                    Spacer(minLength: 8)
+                        .padding(.bottom, 8)
                 }
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .frame(height: 97)
+                .frame(width: (UIScreen.main.bounds.width - 16 * 2 - 3 * 10) / 4, height: 97)
                 .background(props.backgroundColor.cornerRadius(4))
             }
             .buttonStyle(ScaledButtonStyle())

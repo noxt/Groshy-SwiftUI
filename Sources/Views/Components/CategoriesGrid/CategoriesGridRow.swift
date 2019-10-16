@@ -4,28 +4,20 @@
 //
 
 import SwiftUI
-import SwiftUIFlux
 
 
 extension CategoriesGridView {
-    struct Row: ConnectedView {
+    struct Row: View {
+        let items: [Category.ID]
+        let showAddButton: Bool
 
-        struct Props {
-            let categoriesIds: [Category.ID]
-        }
-        
-        let categoriesIds: [Category.ID]
-
-        func map(state: AppFeature.State, dispatch: @escaping DispatchFunction) -> Props {
-            return Props(
-                categoriesIds: categoriesIds
-            )
-        }
-
-        func body(props: Props) -> some View {
+        var body: some View {
             HStack(spacing: 10) {
-                ForEach(props.categoriesIds, id: \.self) { id in
+                ForEach(items, id: \.self) { id in
                     Cell(categoryId: id)
+                }
+                if showAddButton {
+                    AddButton()
                 }
             }
         }

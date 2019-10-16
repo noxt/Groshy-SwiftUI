@@ -23,21 +23,25 @@ struct CategoriesGridView: ConnectedView {
     }
 
     func body(props: Props) -> some View {
-        let chunkedCategories = props.categoriesIds.chunked(into: 4)
         var topItems: [Category.ID] = []
-        if chunkedCategories.count > 0 {
-            topItems = chunkedCategories[0]
-        }
-
         var bottomItems: [Category.ID] = []
-        if chunkedCategories.count > 1 {
-            bottomItems = chunkedCategories[1]
+
+        for (index, id) in props.categoriesIds.enumerated() {
+            if index % 2 == 0 {
+                topItems.append(id)
+            } else {
+                bottomItems.append(id)
+            }
         }
 
-        return VStack(spacing: 9) {
-            Row(categoriesIds: topItems)
-            Row(categoriesIds: bottomItems)
+        return ScrollView(.horizontal, showsIndicators: false) {
+            VStack(alignment: .leading, spacing: 9) {
+                Row(items: topItems, showAddButton: props.categoriesIds.count % 2 == 0)
+                Row(items: bottomItems, showAddButton: props.categoriesIds.count % 2 == 1)
+            }
+            .padding(.horizontal, 16)
         }
+        .padding(.horizontal, -16)
         .onAppear {
             props.dispatch(CategoriesFeature.Actions.LoadCategories())
         }

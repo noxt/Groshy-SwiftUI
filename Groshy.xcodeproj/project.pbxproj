@@ -50,6 +50,7 @@
 		193D5AE123427AF000E0FB19 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 193D5AD623427AF000E0FB19 /* Rubik-BoldItalic.ttf */; };
 		194A9B88234A18CE003F4C6A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194A9B87234A18CE003F4C6A /* Category.swift */; };
 		194A9B8A234A198D003F4C6A /* CategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194A9B89234A198D003F4C6A /* CategoryIcon.swift */; };
+		197093D02357BEDF005C3681 /* CategoriesGridAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197093CF2357BEDF005C3681 /* CategoriesGridAddButton.swift */; };
 		197804A32337A22C0032DD76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197804A22337A22C0032DD76 /* AppDelegate.swift */; };
 		197804A52337A22C0032DD76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197804A42337A22C0032DD76 /* SceneDelegate.swift */; };
 		197804A92337A22E0032DD76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 197804A82337A22E0032DD76 /* Assets.xcassets */; };
@@ -120,6 +121,7 @@
 		193D5AD623427AF000E0FB19 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
 		194A9B87234A18CE003F4C6A /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		194A9B89234A198D003F4C6A /* CategoryIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIcon.swift; sourceTree = "<group>"; };
+		197093CF2357BEDF005C3681 /* CategoriesGridAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGridAddButton.swift; sourceTree = "<group>"; };
 		1978049F2337A22C0032DD76 /* Groshy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Groshy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		197804A22337A22C0032DD76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		197804A42337A22C0032DD76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 		1930B77F23455204003C481C /* CategoriesGrid */ = {
 			isa = PBXGroup;
 			children = (
+				197093CF2357BEDF005C3681 /* CategoriesGridAddButton.swift */,
 				1930B782234552B0003C481C /* CategoriesGridItem.swift */,
 				19F6C0B6234D281C001352C7 /* CategoriesGridRow.swift */,
 				1930B78023455234003C481C /* CategoriesGridView.swift */,
@@ -513,6 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				192166B5235377AB001EFAE3 /* CustomTextField.swift in Sources */,
+				197093D02357BEDF005C3681 /* CategoriesGridAddButton.swift in Sources */,
 				192166A323520A0E001EFAE3 /* NumberFormatter+Currency.swift in Sources */,
 				192166B123526E3D001EFAE3 /* AddHashtagView.swift in Sources */,
 				1909F7A72337F6B4002998CF /* Images.swift in Sources */,

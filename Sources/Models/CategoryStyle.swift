@@ -16,7 +16,7 @@ extension Category {
 extension Category.Style {
 
     static func random() -> Self {
-        return Self(number: (1...7).randomElement()!)
+        return Self(number: (1...16).randomElement()!)
     }
 
     var primaryColor: Color {

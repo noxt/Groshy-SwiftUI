@@ -22,7 +22,7 @@ struct BigPrimaryButton: View {
             }
             .frame(height: height)
             .background(Color.primaryColor)
-            .cornerRadius(4)
+            .cornerRadius(12)
         }
         .buttonStyle(ScaledButtonStyle())
     }

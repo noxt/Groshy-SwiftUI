@@ -7,26 +7,22 @@ import SwiftUI
 import SwiftUIFlux
 
 
-struct HomeBottomView: ConnectedView {
+struct HomeBottomViewComponent: ConnectedView {
 
     struct Props {
         let currentValue: String
         let isHashtagSelected: Bool
-        let createTransactionAction: Action?
+        let transaction: Transaction?
+        let dispatch: DispatchFunction
     }
 
-    @State private var isAddingHashtagPresented = false
 
     func map(state: AppFeature.State, dispatch: @escaping DispatchFunction) -> Props {
-        var action: Action?
-        if let transaction = createTransaction(for: state) {
-            action = TransactionsFeature.Actions.SaveTransaction(transaction: transaction)
-        }
-
         return Props(
             currentValue: state.keyboardState.currentValue,
             isHashtagSelected: state.hashtagsState.selectedHashtag != nil,
-            createTransactionAction: action
+            transaction: createTransaction(for: state),
+            dispatch: dispatch
         )
     }
 
@@ -47,11 +43,37 @@ struct HomeBottomView: ConnectedView {
     }
 
     func body(props: Props) -> some View {
+        var createTransaction: (() -> Void)?
+        if let transaction = props.transaction {
+            createTransaction = {
+                props.dispatch(TransactionsFeature.Actions.SaveTransaction(transaction: transaction))
+            }
+        }
+
+        return HomeBottomView(
+            currentValue: props.currentValue,
+            isHashtagSelected: props.isHashtagSelected,
+            createTransaction: createTransaction
+        )
+    }
+
+}
+
+
+struct HomeBottomView: View {
+
+    let currentValue: String
+    let isHashtagSelected: Bool
+    let createTransaction: (() -> Void)?
+
+    @State private var isAddingHashtagPresented = false
+
+    var body: some View {
         VStack(spacing: 7) {
             HStack(spacing: 4) {
-                CurrentTransactionValueView(title: props.currentValue)
+                CurrentTransactionValueView(title: currentValue)
                 AddHashtagButton(
-                    isSelected: props.isHashtagSelected,
+                    isSelected: isHashtagSelected,
                     action: {
                         self.isAddingHashtagPresented = true
                     }
@@ -63,15 +85,14 @@ struct HomeBottomView: ConnectedView {
             HStack(spacing: 0) {
                 ImageButton(image: Image.Buttons.calendar, action: {})
                 BigPrimaryButton(title: "Зачислить", action: {
-                    if let action = props.createTransactionAction {
-                        store.dispatch(action: action)
-                    }
+                    self.createTransaction?()
                 })
-                .disabled(props.createTransactionAction == nil)
+                .disabled(createTransaction == nil)
+                .opacity(createTransaction == nil ? 0.7 : 1)
             }
         }
         .sheet(isPresented: $isAddingHashtagPresented) {
-            AddHashtagView(isPresented: self.$isAddingHashtagPresented).environmentObject(store)
+            AddHashtagView().environmentObject(store)
         }
     }
 

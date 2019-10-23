@@ -16,7 +16,15 @@ extension HashtagsFeature {
 
         struct LoadHashtags: AsyncAction {
             func execute(state: FluxState?, dispatch: @escaping DispatchFunction) {
-
+                let hashtags = [
+                    Hashtag(id: UUID(), title: "BigZ"),
+                    Hashtag(id: UUID(), title: "Корона"),
+                    Hashtag(id: UUID(), title: "Green"),
+                    Hashtag(id: UUID(), title: "Газпром"),
+                    Hashtag(id: UUID(), title: "Доставка"),
+                    Hashtag(id: UUID(), title: "Salateira"),
+                ]
+                dispatch(Actions.SetHastags(hashtags: hashtags))
             }
         }
 

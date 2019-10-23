@@ -19,7 +19,7 @@ struct HomeView: View {
 
             VStack {
                 HStack(alignment: .bottom) {
-                    HomeHeaderView()
+                    HomeHeaderViewComponent()
 
                     VStack(spacing: 0) {
                         Button(action: {}) {
@@ -48,16 +48,17 @@ struct HomeView: View {
 
                 Spacer()
 
-                CategoriesGridView()
+                CategoriesGridViewComponent()
 
                 Spacer()
 
-                HomeBottomView()
+                HomeBottomViewComponent()
             }
             .padding(16)
         }
         .onAppear {
             self.store.dispatch(action: TransactionsFeature.Actions.LoadTransactions())
+            self.store.dispatch(action: HashtagsFeature.Actions.LoadHashtags())
         }
     }
 

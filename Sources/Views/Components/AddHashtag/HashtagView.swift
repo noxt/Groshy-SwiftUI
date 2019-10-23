@@ -14,14 +14,14 @@ struct HashtagView: View {
         HStack {
             Text("#")
                 .font(Font.Rubik.Bold(size: 17))
-                .foregroundColor(.primaryColor)
+                .foregroundColor(.button)
             Text(hashtag.title)
                 .font(Font.Rubik.Bold(size: 17))
-                .foregroundColor(.label)
+                .foregroundColor(.secondaryLabel)
         }
         .padding(8)
         .background(Color.secondaryBackground)
-        .cornerRadius(4)
+        .cornerRadius(12)
         .buttonStyle(ScaledButtonStyle())
     }
 }

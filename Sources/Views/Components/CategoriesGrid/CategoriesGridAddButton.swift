@@ -8,6 +8,11 @@ import SwiftUI
 
 extension CategoriesGridView {
     struct AddButton: View {
+
+        private let cornerRadius: CGFloat = 12
+        private let interitemSpacing: CGFloat = 9
+        private let horizontalPadding: CGFloat = 16
+
         var body: some View {
             Button(action: {}) {
                 VStack {
@@ -25,19 +30,10 @@ extension CategoriesGridView {
                         .foregroundColor(Color.Categories.plusIcon)
                         .padding(.bottom, 20)
                 }
-                .frame(width: (UIScreen.main.bounds.width - 16 * 2 - 3 * 10) / 4, height: 97)
-                .background(Color.secondaryBackground.cornerRadius(4))
+                .frame(width: (UIScreen.main.bounds.width - horizontalPadding * 2 - 3 * interitemSpacing) / 4, height: 97)
+                .background(Color.secondaryBackground.cornerRadius(cornerRadius))
             }
             .buttonStyle(ScaledButtonStyle())
         }
     }
 }
-
-
-#if DEBUG
-struct CategoriesGridAddButton_Previews: PreviewProvider {
-    static var previews: some View {
-        CategoriesGridView.AddButton()
-    }
-}
-#endif

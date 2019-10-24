@@ -80,7 +80,7 @@ struct HomeBottomView: View {
                 )
             }
 
-            KeyboardView()
+            KeyboardViewComponent()
 
             HStack(spacing: 0) {
                 ImageButton(image: Image.Buttons.calendar, action: {})
@@ -92,7 +92,7 @@ struct HomeBottomView: View {
             }
         }
         .sheet(isPresented: $isAddingHashtagPresented) {
-            AddHashtagView().environmentObject(store)
+            AddHashtagViewComponent().environmentObject(store)
         }
     }
 

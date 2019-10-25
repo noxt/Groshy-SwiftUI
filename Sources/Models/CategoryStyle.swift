@@ -7,7 +7,7 @@ import SwiftUI
 
 
 extension Category {
-    struct Style: Codable {
+    struct Style: Codable, Hashable {
         let number: Int
     }
 }
@@ -15,8 +15,14 @@ extension Category {
 
 extension Category.Style {
 
+    static var allCases: [Self] {
+        return (1...16).map { (number) -> Self in
+            Self(number: number)
+        }
+    }
+
     static func random() -> Self {
-        return Self(number: (1...16).randomElement()!)
+        return allCases.randomElement()!
     }
 
     var primaryColor: Color {

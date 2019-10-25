@@ -14,6 +14,10 @@ extension CategoriesFeature {
 
         }
 
+        struct SaveCategory: Action {
+            let category: Category
+        }
+
         struct SelectCategory: Action {
             let id: Category.ID
         }

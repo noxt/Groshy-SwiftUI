@@ -13,8 +13,10 @@ extension CategoriesGridView {
         private let interitemSpacing: CGFloat = 9
         private let horizontalPadding: CGFloat = 16
 
+        let action: () -> Void
+
         var body: some View {
-            Button(action: {}) {
+            Button(action: action) {
                 VStack {
                     Text("Добавить")
                         .font(Font.Rubik.Regular(size: 11))

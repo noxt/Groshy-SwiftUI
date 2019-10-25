@@ -11,7 +11,7 @@ struct HashtagView: View {
     let hashtag: Hashtag
 
     var body: some View {
-        HStack {
+        HStack(spacing: 4) {
             Text("#")
                 .font(Font.Rubik.Bold(size: 17))
                 .foregroundColor(.button)

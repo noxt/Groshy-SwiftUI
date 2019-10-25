@@ -50,6 +50,9 @@
 		193D5AE123427AF000E0FB19 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 193D5AD623427AF000E0FB19 /* Rubik-BoldItalic.ttf */; };
 		194A9B88234A18CE003F4C6A /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194A9B87234A18CE003F4C6A /* Category.swift */; };
 		194A9B8A234A198D003F4C6A /* CategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194A9B89234A198D003F4C6A /* CategoryIcon.swift */; };
+		194C245F236247A9008B8C5A /* AddCategoryViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C245E236247A9008B8C5A /* AddCategoryViewComponent.swift */; };
+		194C24852363A90F008B8C5A /* AddCategoryIconGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C24842363A90F008B8C5A /* AddCategoryIconGridView.swift */; };
+		194C24872363A99C008B8C5A /* AddCategoryStyleGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C24862363A99C008B8C5A /* AddCategoryStyleGridView.swift */; };
 		197093D02357BEDF005C3681 /* CategoriesGridAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197093CF2357BEDF005C3681 /* CategoriesGridAddButton.swift */; };
 		197804A32337A22C0032DD76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197804A22337A22C0032DD76 /* AppDelegate.swift */; };
 		197804A52337A22C0032DD76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197804A42337A22C0032DD76 /* SceneDelegate.swift */; };
@@ -120,6 +123,9 @@
 		193D5AD623427AF000E0FB19 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
 		194A9B87234A18CE003F4C6A /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		194A9B89234A198D003F4C6A /* CategoryIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIcon.swift; sourceTree = "<group>"; };
+		194C245E236247A9008B8C5A /* AddCategoryViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewComponent.swift; sourceTree = "<group>"; };
+		194C24842363A90F008B8C5A /* AddCategoryIconGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryIconGridView.swift; sourceTree = "<group>"; };
+		194C24862363A99C008B8C5A /* AddCategoryStyleGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryStyleGridView.swift; sourceTree = "<group>"; };
 		197093CF2357BEDF005C3681 /* CategoriesGridAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGridAddButton.swift; sourceTree = "<group>"; };
 		1978049F2337A22C0032DD76 /* Groshy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Groshy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		197804A22337A22C0032DD76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +180,7 @@
 		1909F7992337A5AF002998CF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				194C245D236242B4008B8C5A /* AddCategory */,
 				192166AF23526E1D001EFAE3 /* AddHashtag */,
 				1930B77F23455204003C481C /* CategoriesGrid */,
 				1909F79D2337A65B002998CF /* Keyboard */,
@@ -303,6 +310,16 @@
 				1921669C2351E457001EFAE3 /* TransactionFilter.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		194C245D236242B4008B8C5A /* AddCategory */ = {
+			isa = PBXGroup;
+			children = (
+				194C245E236247A9008B8C5A /* AddCategoryViewComponent.swift */,
+				194C24842363A90F008B8C5A /* AddCategoryIconGridView.swift */,
+				194C24862363A99C008B8C5A /* AddCategoryStyleGridView.swift */,
+			);
+			path = AddCategory;
 			sourceTree = "<group>";
 		};
 		197804962337A22C0032DD76 = {
@@ -512,6 +529,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				194C245F236247A9008B8C5A /* AddCategoryViewComponent.swift in Sources */,
 				192166B5235377AB001EFAE3 /* CustomTextField.swift in Sources */,
 				197093D02357BEDF005C3681 /* CategoriesGridAddButton.swift in Sources */,
 				192166A323520A0E001EFAE3 /* NumberFormatter+Currency.swift in Sources */,
@@ -523,6 +541,7 @@
 				192166AC23526532001EFAE3 /* HashtagsActions.swift in Sources */,
 				19CFD3402342912500D5A347 /* AppReducer.swift in Sources */,
 				19CFD342234292C800D5A347 /* AppState.swift in Sources */,
+				194C24852363A90F008B8C5A /* AddCategoryIconGridView.swift in Sources */,
 				192166992351E3AD001EFAE3 /* Transaction.swift in Sources */,
 				192166972351E359001EFAE3 /* TransactionsActions.swift in Sources */,
 				1921669B2351E3F9001EFAE3 /* Hashtag.swift in Sources */,
@@ -552,6 +571,7 @@
 				197804A32337A22C0032DD76 /* AppDelegate.swift in Sources */,
 				1909F7AC2338C242002998CF /* DeleteButton.swift in Sources */,
 				192166A8235264A2001EFAE3 /* HashtagsFeature.swift in Sources */,
+				194C24872363A99C008B8C5A /* AddCategoryStyleGridView.swift in Sources */,
 				19CFD34C2342A39000D5A347 /* KeyboardState.swift in Sources */,
 				19DEB412234A1E66004048D3 /* CategoriesFeature.swift in Sources */,
 				1930B78123455234003C481C /* CategoriesGridViewComponent.swift in Sources */,

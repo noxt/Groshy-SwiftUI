@@ -62,6 +62,8 @@ struct CategoriesGridView: View {
 
     let rows: [CategoriesGridViewComponent.Row]
 
+    @State private var isAddCategoryPresented = false
+
     var body: some View {
         return ScrollView(.horizontal, showsIndicators: false) {
             VStack(alignment: .leading, spacing: 9) {
@@ -72,7 +74,9 @@ struct CategoriesGridView: View {
             .padding(.horizontal, 16)
         }
         .padding(.horizontal, -16)
-
+        .sheet(isPresented: $isAddCategoryPresented) {
+            AddCategoryViewComponent().environmentObject(store)
+        }
     }
 
     private func CategoriesRow(categories: [Category.ID], showAddButton: Bool) -> some View {
@@ -81,7 +85,9 @@ struct CategoriesGridView: View {
                 CategoriesGridCellComponent(categoryId: id)
             }
             if showAddButton {
-                AddButton()
+                AddButton {
+                    self.isAddCategoryPresented = true
+                }
             }
         }
     }

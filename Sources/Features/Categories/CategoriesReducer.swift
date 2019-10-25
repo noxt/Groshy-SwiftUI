@@ -19,6 +19,11 @@ extension CategoriesFeature {
         case is Actions.LoadCategories:
             state.isLoading = true
 
+        case let action as Actions.SaveCategory:
+            state.categories[action.category.id] = action.category
+            state.sortOrder.append(action.category.id)
+            state.selectedCategory = action.category.id
+
         case is Actions.ClearSelectedCategory:
             state.selectedCategory = nil
 

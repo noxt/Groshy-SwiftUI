@@ -88,13 +88,13 @@ struct AddHashtagView: View {
         var hashtags: [Hashtag]
     }
 
-    @State private var hashtagTitle = ""
+    @State private var title = ""
 
     let isEmptyHashtags: Bool
     let hashtagsRows: [Row]
-    let createHashtagAction: ((String) -> Void)
-    let selectHashtagAction: ((Hashtag) -> Void)
-    let dismiss: (() -> Void)
+    let createHashtagAction: (String) -> Void
+    let selectHashtagAction: (Hashtag) -> Void
+    let dismiss: () -> Void
 
     var body: some View {
         VStack {
@@ -104,7 +104,8 @@ struct AddHashtagView: View {
                 Spacer()
                 ImageButton(image: Image.Buttons.save, action: saveHashtag)
                     .offset(x: 10, y: -10)
-                    .disabled(hashtagTitle.isEmpty)
+                    .disabled(title.isEmpty)
+                    .opacity(title.isEmpty ? 0.7 : 1)
             }
 
             Spacer()
@@ -114,7 +115,7 @@ struct AddHashtagView: View {
                     .font(Font.Rubik.Medium(size: 32))
                     .foregroundColor(.primaryColor)
 
-                TextField("Хэштег", text: $hashtagTitle, onCommit: saveHashtag)
+                TextField("Хэштег", text: $title, onCommit: saveHashtag)
                     .keyboardType(.default)
                     .autocapitalization(.words)
                     .disableAutocorrection(true)
@@ -134,7 +135,7 @@ struct AddHashtagView: View {
     }
 
     private func saveHashtag() {
-        createHashtagAction(hashtagTitle)
+        createHashtagAction(title)
     }
 
     private func HashtagsListView() -> some View {

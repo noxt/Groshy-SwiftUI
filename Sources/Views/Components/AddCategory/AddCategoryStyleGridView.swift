@@ -62,6 +62,7 @@ fileprivate extension AddCategoryStyleGridView {
                             isSelected: style == self.selectedStyle
                         )
                     }
+                    .buttonStyle(ScaledButtonStyle())
                 }
             }
         }

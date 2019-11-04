@@ -53,12 +53,15 @@
 		194C245F236247A9008B8C5A /* AddCategoryViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C245E236247A9008B8C5A /* AddCategoryViewComponent.swift */; };
 		194C24852363A90F008B8C5A /* AddCategoryIconGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C24842363A90F008B8C5A /* AddCategoryIconGridView.swift */; };
 		194C24872363A99C008B8C5A /* AddCategoryStyleGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C24862363A99C008B8C5A /* AddCategoryStyleGridView.swift */; };
+		194C248A23649396008B8C5A /* StatisticsViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C248923649396008B8C5A /* StatisticsViewComponent.swift */; };
 		197093D02357BEDF005C3681 /* CategoriesGridAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197093CF2357BEDF005C3681 /* CategoriesGridAddButton.swift */; };
 		197804A32337A22C0032DD76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197804A22337A22C0032DD76 /* AppDelegate.swift */; };
 		197804A52337A22C0032DD76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197804A42337A22C0032DD76 /* SceneDelegate.swift */; };
 		197804A92337A22E0032DD76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 197804A82337A22E0032DD76 /* Assets.xcassets */; };
 		197804AC2337A22E0032DD76 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 197804AB2337A22E0032DD76 /* Preview Assets.xcassets */; };
 		197804AF2337A22E0032DD76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 197804AD2337A22E0032DD76 /* LaunchScreen.storyboard */; };
+		198F961E236C86E800A5B6B5 /* HomeContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198F961D236C86E800A5B6B5 /* HomeContainerView.swift */; };
+		198F9620236C8A2F00A5B6B5 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198F961F236C8A2F00A5B6B5 /* StatisticsView.swift */; };
 		19CFD33223428D5B00D5A347 /* SwiftUIFlux in Frameworks */ = {isa = PBXBuildFile; productRef = 19CFD33123428D5B00D5A347 /* SwiftUIFlux */; };
 		19CFD33923428FC800D5A347 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFD33823428FC800D5A347 /* AppFeature.swift */; };
 		19CFD33B2342902E00D5A347 /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CFD33A2342902E00D5A347 /* AppAction.swift */; };
@@ -126,6 +129,7 @@
 		194C245E236247A9008B8C5A /* AddCategoryViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewComponent.swift; sourceTree = "<group>"; };
 		194C24842363A90F008B8C5A /* AddCategoryIconGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryIconGridView.swift; sourceTree = "<group>"; };
 		194C24862363A99C008B8C5A /* AddCategoryStyleGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryStyleGridView.swift; sourceTree = "<group>"; };
+		194C248923649396008B8C5A /* StatisticsViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewComponent.swift; sourceTree = "<group>"; };
 		197093CF2357BEDF005C3681 /* CategoriesGridAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGridAddButton.swift; sourceTree = "<group>"; };
 		1978049F2337A22C0032DD76 /* Groshy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Groshy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		197804A22337A22C0032DD76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 		197804AB2337A22E0032DD76 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		197804AE2337A22E0032DD76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		197804B02337A22E0032DD76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		198F961D236C86E800A5B6B5 /* HomeContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerView.swift; sourceTree = "<group>"; };
+		198F961F236C8A2F00A5B6B5 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		19CFD33823428FC800D5A347 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
 		19CFD33A2342902E00D5A347 /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
 		19CFD33D234290E500D5A347 /* LoggingMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingMiddleware.swift; sourceTree = "<group>"; };
@@ -180,6 +186,7 @@
 		1909F7992337A5AF002998CF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				194C24882364937C008B8C5A /* Statistics */,
 				194C245D236242B4008B8C5A /* AddCategory */,
 				192166AF23526E1D001EFAE3 /* AddHashtag */,
 				1930B77F23455204003C481C /* CategoriesGrid */,
@@ -197,6 +204,7 @@
 				1930B77D23455024003C481C /* HomeBottomViewComponent.swift */,
 				192166A423525557001EFAE3 /* HomeHeaderViewComponent.swift */,
 				1909F79B2337A5EE002998CF /* HomeView.swift */,
+				198F961D236C86E800A5B6B5 /* HomeContainerView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -320,6 +328,15 @@
 				194C24862363A99C008B8C5A /* AddCategoryStyleGridView.swift */,
 			);
 			path = AddCategory;
+			sourceTree = "<group>";
+		};
+		194C24882364937C008B8C5A /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				194C248923649396008B8C5A /* StatisticsViewComponent.swift */,
+				198F961F236C8A2F00A5B6B5 /* StatisticsView.swift */,
+			);
+			path = Statistics;
 			sourceTree = "<group>";
 		};
 		197804962337A22C0032DD76 = {
@@ -552,6 +569,7 @@
 				1930B783234552B0003C481C /* CategoriesGridCellComponent.swift in Sources */,
 				1909F7A22337B095002998CF /* CurrentTransactionValueView.swift in Sources */,
 				192166A12351E7A8001EFAE3 /* TransactionsState.swift in Sources */,
+				198F961E236C86E800A5B6B5 /* HomeContainerView.swift in Sources */,
 				19F6C0B5234D1A8C001352C7 /* Array+Chunked.swift in Sources */,
 				19DEB40F234A1DBD004048D3 /* CategoryStyle.swift in Sources */,
 				194A9B88234A18CE003F4C6A /* Category.swift in Sources */,
@@ -563,6 +581,7 @@
 				19CFD33E234290E500D5A347 /* LoggingMiddleware.swift in Sources */,
 				19CFD33B2342902E00D5A347 /* AppAction.swift in Sources */,
 				19DEA0B8234D36B80075552C /* ScaledButtonStyle.swift in Sources */,
+				198F9620236C8A2F00A5B6B5 /* StatisticsView.swift in Sources */,
 				192166AA235264C0001EFAE3 /* HashtagsState.swift in Sources */,
 				19CFD3462342A00D00D5A347 /* KeyboardFeature.swift in Sources */,
 				19DEB414234A1E9D004048D3 /* CategoriesState.swift in Sources */,
@@ -577,6 +596,7 @@
 				1930B78123455234003C481C /* CategoriesGridViewComponent.swift in Sources */,
 				19DEB41B234A21F3004048D3 /* Array+Normalization.swift in Sources */,
 				1921669D2351E457001EFAE3 /* TransactionFilter.swift in Sources */,
+				194C248A23649396008B8C5A /* StatisticsViewComponent.swift in Sources */,
 				1909F79F2337A66A002998CF /* KeyboardView.swift in Sources */,
 				19DEB416234A1F05004048D3 /* CategoriesActions.swift in Sources */,
 				1909F79C2337A5EE002998CF /* HomeView.swift in Sources */,

@@ -4,13 +4,12 @@
 //
 
 import SwiftUI
-import SwiftUIFlux
 
 
 struct HomeView: View {
 
-    @EnvironmentObject var store: Store<AppFeature.State>
-
+    var showSettings: () -> Void
+    var showStatistics: () -> Void
 
     var body: some View {
         ZStack {
@@ -22,7 +21,7 @@ struct HomeView: View {
                     HomeHeaderViewComponent()
 
                     VStack(spacing: 0) {
-                        Button(action: {}) {
+                        Button(action: showSettings) {
                             ZStack {
                                 Image.Buttons.settings
                                     .resizable()
@@ -33,7 +32,7 @@ struct HomeView: View {
                             .frame(width: 40, height: 40)
                         }
 
-                        Button(action: {}) {
+                        Button(action: showStatistics) {
                             ZStack {
                                 Image.Buttons.statistics
                                     .resizable()
@@ -56,19 +55,6 @@ struct HomeView: View {
             }
             .padding(16)
         }
-        .onAppear {
-            self.store.dispatch(action: TransactionsFeature.Actions.LoadTransactions())
-            self.store.dispatch(action: HashtagsFeature.Actions.LoadHashtags())
-        }
     }
 
-}
-
-
-// MARK: - PreviewProvider
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView().environmentObject(store)
-    }
 }

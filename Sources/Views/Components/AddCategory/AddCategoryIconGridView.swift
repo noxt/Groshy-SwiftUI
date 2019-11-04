@@ -69,6 +69,7 @@ fileprivate extension AddCategoryIconGridView {
                             isSelected: icon == self.selectedIcon
                         )
                     }
+                    .buttonStyle(ScaledButtonStyle())
                 }
             }
         }
@@ -104,7 +105,7 @@ fileprivate extension AddCategoryIconGridView {
         }
 
         private var iconColor: Color {
-            return isSelected ? .background : style.primaryColor
+            return isSelected ? .background : .button
         }
 
     }

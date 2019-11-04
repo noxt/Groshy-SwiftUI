@@ -27,7 +27,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
             let controller = UIHostingController(rootView:
                 StoreProvider(store: store) {
-                    HomeView()
+                    HomeContainerView()
                 }
             )
 

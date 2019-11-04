@@ -67,28 +67,36 @@ struct HomeBottomView: View {
     let createTransaction: (() -> Void)?
 
     @State private var isAddingHashtagPresented = false
+    @State private var isDatePickerPresented = false
+    @State private var selectedDate = Date()
 
     var body: some View {
-        VStack(spacing: 7) {
-            HStack(spacing: 4) {
-                CurrentTransactionValueView(title: currentValue)
-                AddHashtagButton(
-                    isSelected: isHashtagSelected,
-                    action: {
-                        self.isAddingHashtagPresented = true
-                    }
-                )
-            }
+        ZStack {
+            VStack(spacing: 7) {
+                HStack(spacing: 4) {
+                    CurrentTransactionValueView(title: currentValue)
+                    AddHashtagButton(
+                        isSelected: isHashtagSelected,
+                        action: {
+                            self.isAddingHashtagPresented = true
+                        }
+                    )
+                }
 
-            KeyboardViewComponent()
+                KeyboardViewComponent()
 
-            HStack(spacing: 0) {
-                ImageButton(image: Image.Buttons.calendar, action: {})
-                BigPrimaryButton(title: "Зачислить", action: {
-                    self.createTransaction?()
-                })
-                .disabled(createTransaction == nil)
-                .opacity(createTransaction == nil ? 0.7 : 1)
+                HStack(spacing: 0) {
+                    ImageButton(image: Image.Buttons.calendar, action: {
+                        withAnimation {
+                            self.isDatePickerPresented = true
+                        }
+                    })
+                    BigPrimaryButton(title: "Зачислить", action: {
+                        self.createTransaction?()
+                    })
+                        .disabled(createTransaction == nil)
+                        .opacity(createTransaction == nil ? 0.7 : 1)
+                }
             }
         }
         .sheet(isPresented: $isAddingHashtagPresented) {

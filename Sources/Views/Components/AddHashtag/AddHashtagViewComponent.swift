@@ -153,7 +153,7 @@ struct AddHashtagView: View {
     private func HashtagsListRow(hashtags: [Hashtag]) -> some View {
         HStack(spacing: 8) {
             ForEach(hashtags) { hashtag in
-                HashtagView(hashtag: hashtag)
+                HashtagView(title: hashtag.title)
                     .onTapGesture {
                         self.selectHashtagAction(hashtag)
                     }

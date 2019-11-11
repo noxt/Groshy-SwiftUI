@@ -28,3 +28,17 @@ extension KeyboardView {
 
     }
 }
+
+
+#if DEBUG
+struct KeyboardView_Delete_Preview: PreviewProvider {
+    static var previews: some View {
+        KeyboardView.DeleteButton(
+            action: { },
+            longPressAction: { }
+        )
+            .previewLayout(.sizeThatFits)
+            .padding(8)
+    }
+}
+#endif

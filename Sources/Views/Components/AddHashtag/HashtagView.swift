@@ -8,14 +8,14 @@ import SwiftUI
 
 struct HashtagView: View {
 
-    let hashtag: Hashtag
+    let title: String
 
     var body: some View {
         HStack(spacing: 4) {
             Text("#")
                 .font(Font.Rubik.Bold(size: 17))
                 .foregroundColor(.button)
-            Text(hashtag.title)
+            Text(title)
                 .font(Font.Rubik.Bold(size: 17))
                 .foregroundColor(.secondaryLabel)
         }
@@ -24,4 +24,16 @@ struct HashtagView: View {
         .cornerRadius(12)
         .buttonStyle(ScaledButtonStyle())
     }
+
 }
+
+
+#if DEBUG
+struct HashtagView_Preview: PreviewProvider {
+    static var previews: some View {
+        HashtagView(title: "Hashtag")
+            .previewLayout(.sizeThatFits)
+            .padding(8)
+    }
+}
+#endif

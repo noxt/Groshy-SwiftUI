@@ -100,7 +100,7 @@ struct CategoriesGridCellView: View {
                     .padding(.horizontal, 4)
                     .padding(.bottom, 8)
             }
-            .frame(width: (UIScreen.main.bounds.width - horizontalPadding * 2 - 3 * interitemSpacing) / 4, height: 97)
+            .frame(width: (UIScreen.main.bounds.width - horizontalPadding * 2 - 3 * interitemSpacing) / 4)
             .background(backgroundColor.cornerRadius(cornerRadius))
         }
         .buttonStyle(ScaledButtonStyle())
@@ -141,3 +141,36 @@ private extension CategoriesGridCellView {
     }
 
 }
+
+
+#if DEBUG
+struct View_Preview: PreviewProvider {
+    static var previews: some View {
+        Group {
+            CategoriesGridCellView(
+                title: "Продукты",
+                value: 12.34,
+                icon: .products,
+                style: .random(),
+                isSelected: false,
+                selectCategoryAction: {}
+            )
+                .previewLayout(.sizeThatFits)
+                .frame(height: 97)
+                .padding(8)
+
+            CategoriesGridCellView(
+                title: "Продукты",
+                value: 12.34,
+                icon: .products,
+                style: .random(),
+                isSelected: true,
+                selectCategoryAction: {}
+            )
+                .previewLayout(.sizeThatFits)
+                .frame(height: 97)
+                .padding(8)
+        }
+    }
+}
+#endif

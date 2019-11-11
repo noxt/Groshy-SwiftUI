@@ -13,39 +13,21 @@ struct HomeContainerView: View {
     @State private var isStatisticsPresented = false
 
     var body: some View {
-        ZStack {
-            HomeView(
-                showSettings: {
-
-                },
-                showStatistics: {
-                    withAnimation {
-                        self.isStatisticsPresented.toggle()
-                    }
-                }
-            )
-
-            if isStatisticsPresented {
-                StatisticsView(isStatisticsPresented: $isStatisticsPresented)
-                    .transition(.moveAndFade)
+        HomeView(
+            showSettings: {
+            },
+            showStatistics: {
+                self.isStatisticsPresented.toggle()
             }
-        }
+        )
         .onAppear {
             self.store.dispatch(action: CategoriesFeature.Actions.LoadCategories())
             self.store.dispatch(action: TransactionsFeature.Actions.LoadTransactions())
             self.store.dispatch(action: HashtagsFeature.Actions.LoadHashtags())
         }
+        .sheet(isPresented: $isStatisticsPresented) {
+            StatisticsView(isStatisticsPresented: self.$isStatisticsPresented)
+        }
     }
 
-}
-
-
-extension AnyTransition {
-    static var moveAndFade: AnyTransition {
-        let insertion = AnyTransition.move(edge: .trailing)
-            .combined(with: .opacity)
-        let removal = AnyTransition.move(edge: .leading)
-            .combined(with: .opacity)
-        return .asymmetric(insertion: insertion, removal: removal)
-    }
 }

@@ -32,10 +32,24 @@ extension CategoriesGridView {
                         .foregroundColor(Color.Categories.plusIcon)
                         .padding(.bottom, 20)
                 }
-                .frame(width: (UIScreen.main.bounds.width - horizontalPadding * 2 - 3 * interitemSpacing) / 4, height: 97)
+                .frame(width: (UIScreen.main.bounds.width - horizontalPadding * 2 - 3 * interitemSpacing) / 4)
                 .background(Color.secondaryBackground.cornerRadius(cornerRadius))
             }
             .buttonStyle(ScaledButtonStyle())
         }
     }
 }
+
+
+#if DEBUG
+struct CategoriesGridView_AddButton_Preview: PreviewProvider {
+    static var previews: some View {
+        CategoriesGridView.AddButton(
+            action: { }
+        )
+            .previewLayout(.sizeThatFits)
+            .frame(height: 97)
+            .padding(8)
+    }
+}
+#endif

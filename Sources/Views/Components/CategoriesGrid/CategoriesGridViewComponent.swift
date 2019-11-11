@@ -9,14 +9,8 @@ import SwiftUIFlux
 
 struct CategoriesGridViewComponent: ConnectedView {
 
-    struct Row: Identifiable {
-        let id: Int
-        var categories: [Category.ID]
-        var showAddButton: Bool
-    }
-
     struct Props {
-        let rows: [Row]
+        let rows: [CategoriesGridView.Row]
         let dispatch: DispatchFunction
     }
 
@@ -35,17 +29,14 @@ struct CategoriesGridViewComponent: ConnectedView {
         CategoriesGridView(
             rows: props.rows
         )
-            .onAppear {
-                props.dispatch(CategoriesFeature.Actions.LoadCategories())
-            }
     }
 
 
-    private func splitCategoriesByRows(_ categories: [Category], numberOfRows: Int = 2) -> [Row] {
-        var rows: [Row] = []
+    private func splitCategoriesByRows(_ categories: [Category], numberOfRows: Int = 2) -> [CategoriesGridView.Row] {
+        var rows: [CategoriesGridView.Row] = []
 
         for id in 0..<numberOfRows {
-            rows.append(Row(id: id, categories: [], showAddButton: categories.count % numberOfRows == id))
+            rows.append(CategoriesGridView.Row(id: id, categories: [], showAddButton: categories.count % numberOfRows == id))
         }
 
         for (index, category) in categories.enumerated() {
@@ -60,12 +51,18 @@ struct CategoriesGridViewComponent: ConnectedView {
 
 struct CategoriesGridView: View {
 
-    let rows: [CategoriesGridViewComponent.Row]
+    struct Row: Identifiable {
+        let id: Int
+        var categories: [Category.ID]
+        var showAddButton: Bool
+    }
+
+    let rows: [Row]
 
     @State private var isAddCategoryPresented = false
 
     var body: some View {
-        return ScrollView(.horizontal, showsIndicators: false) {
+        ScrollView(.horizontal, showsIndicators: false) {
             VStack(alignment: .leading, spacing: 9) {
                 ForEach(rows) { row in
                     self.CategoriesRow(categories: row.categories, showAddButton: row.showAddButton)
@@ -90,6 +87,7 @@ struct CategoriesGridView: View {
                 }
             }
         }
+        .frame(height: 97)
     }
 
 }

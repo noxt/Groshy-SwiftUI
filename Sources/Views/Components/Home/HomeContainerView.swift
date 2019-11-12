@@ -10,24 +10,14 @@ import SwiftUIFlux
 struct HomeContainerView: View {
 
     @EnvironmentObject var store: Store<AppFeature.State>
-    @State private var isStatisticsPresented = false
 
     var body: some View {
-        HomeView(
-            showSettings: {
-            },
-            showStatistics: {
-                self.isStatisticsPresented.toggle()
+        HomeView()
+            .onAppear {
+                self.store.dispatch(action: CategoriesFeature.Actions.LoadCategories())
+                self.store.dispatch(action: TransactionsFeature.Actions.LoadTransactions())
+                self.store.dispatch(action: HashtagsFeature.Actions.LoadHashtags())
             }
-        )
-        .onAppear {
-            self.store.dispatch(action: CategoriesFeature.Actions.LoadCategories())
-            self.store.dispatch(action: TransactionsFeature.Actions.LoadTransactions())
-            self.store.dispatch(action: HashtagsFeature.Actions.LoadHashtags())
-        }
-        .sheet(isPresented: $isStatisticsPresented) {
-            StatisticsView(isStatisticsPresented: self.$isStatisticsPresented)
-        }
     }
 
 }

@@ -8,8 +8,7 @@ import SwiftUI
 
 struct HomeView: View {
 
-    var showSettings: () -> Void
-    var showStatistics: () -> Void
+    @State private var isStatisticsPresented = false
 
     var body: some View {
         ZStack {
@@ -21,7 +20,7 @@ struct HomeView: View {
                     HomeHeaderViewComponent()
 
                     VStack(spacing: 0) {
-                        Button(action: showSettings) {
+                        Button(action: {}) {
                             ZStack {
                                 Image.Buttons.settings
                                     .resizable()
@@ -32,7 +31,7 @@ struct HomeView: View {
                             .frame(width: 40, height: 40)
                         }
 
-                        Button(action: showStatistics) {
+                        Button(action: { self.isStatisticsPresented = true }) {
                             ZStack {
                                 Image.Buttons.statistics
                                     .resizable()
@@ -41,13 +40,16 @@ struct HomeView: View {
                             }
                             .frame(width: 40, height: 40)
                         }
+                        .sheet(isPresented: $isStatisticsPresented) {
+                            StatisticsView()
+                        }
                     }
                     .padding(EdgeInsets(top: -15, leading: 0, bottom: -5, trailing: -8))
                 }
 
                 Spacer()
 
-                CategoriesGridViewComponent()
+                CategoriesGridView.Component()
 
                 Spacer()
 

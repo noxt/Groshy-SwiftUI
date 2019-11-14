@@ -27,3 +27,17 @@ extension KeyboardView {
 
     }
 }
+
+
+#if DEBUG
+struct KeyboardView_DigitButton_Preview: PreviewProvider {
+    static var previews: some View {
+        KeyboardView.DigitButton(
+            title: "1",
+            action: {}
+        )
+            .previewLayout(.sizeThatFits)
+            .padding(8)
+    }
+}
+#endif

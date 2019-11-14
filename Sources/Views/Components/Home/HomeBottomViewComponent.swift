@@ -81,6 +81,9 @@ struct HomeBottomView: View {
                             self.isAddingHashtagPresented = true
                         }
                     )
+                    .sheet(isPresented: $isAddingHashtagPresented) {
+                        AddHashtagView.Component().environmentObject(store)
+                    }
                 }
 
                 KeyboardViewComponent()
@@ -98,9 +101,6 @@ struct HomeBottomView: View {
                         .opacity(createTransaction == nil ? 0.7 : 1)
                 }
             }
-        }
-        .sheet(isPresented: $isAddingHashtagPresented) {
-            AddHashtagViewComponent().environmentObject(store)
         }
     }
 

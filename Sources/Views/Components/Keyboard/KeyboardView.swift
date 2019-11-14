@@ -81,3 +81,19 @@ struct KeyboardView: View {
     }
 
 }
+
+
+#if DEBUG
+struct KeyboardView_Preview: PreviewProvider {
+    static var previews: some View {
+        KeyboardView(
+            selectDigit: { _ in },
+            addComma: { },
+            removeLast: { },
+            removeAll: { }
+        )
+            .previewLayout(.sizeThatFits)
+            .padding(8)
+    }
+}
+#endif

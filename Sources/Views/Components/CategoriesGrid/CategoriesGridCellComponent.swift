@@ -97,6 +97,7 @@ struct CategoriesGridCellView: View {
                 Text("\(NSNumber(value: value), formatter: NumberFormatter.currency)")
                     .font(Font.Rubik.Medium(size: 11))
                     .foregroundColor(valueColor)
+                    .animation(.spring())
                     .padding(.horizontal, 4)
                     .padding(.bottom, 8)
             }
@@ -105,6 +106,7 @@ struct CategoriesGridCellView: View {
         }
         .buttonStyle(ScaledButtonStyle())
         .disabled(selectCategoryAction == nil)
+        .padding(2)
     }
 
 }

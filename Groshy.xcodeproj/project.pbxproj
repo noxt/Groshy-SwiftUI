@@ -55,6 +55,9 @@
 		194C24872363A99C008B8C5A /* AddCategoryStyleGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C24862363A99C008B8C5A /* AddCategoryStyleGridView.swift */; };
 		194C248A23649396008B8C5A /* StatisticsViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194C248923649396008B8C5A /* StatisticsViewComponent.swift */; };
 		197093D02357BEDF005C3681 /* CategoriesGridAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197093CF2357BEDF005C3681 /* CategoriesGridAddButton.swift */; };
+		197093D823721D02005C3681 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197093D723721D02005C3681 /* ServiceLocator.swift */; };
+		197093DA23721F84005C3681 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197093D923721F84005C3681 /* KeychainService.swift */; };
+		197093DD23721FA3005C3681 /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 197093DC23721FA3005C3681 /* KeychainAccess */; };
 		197804A32337A22C0032DD76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197804A22337A22C0032DD76 /* AppDelegate.swift */; };
 		197804A52337A22C0032DD76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197804A42337A22C0032DD76 /* SceneDelegate.swift */; };
 		197804A92337A22E0032DD76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 197804A82337A22E0032DD76 /* Assets.xcassets */; };
@@ -131,6 +134,8 @@
 		194C24862363A99C008B8C5A /* AddCategoryStyleGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryStyleGridView.swift; sourceTree = "<group>"; };
 		194C248923649396008B8C5A /* StatisticsViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewComponent.swift; sourceTree = "<group>"; };
 		197093CF2357BEDF005C3681 /* CategoriesGridAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesGridAddButton.swift; sourceTree = "<group>"; };
+		197093D723721D02005C3681 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		197093D923721F84005C3681 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		1978049F2337A22C0032DD76 /* Groshy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Groshy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		197804A22337A22C0032DD76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		197804A42337A22C0032DD76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				197093DD23721FA3005C3681 /* KeychainAccess in Frameworks */,
 				19CFD33223428D5B00D5A347 /* SwiftUIFlux in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +345,15 @@
 			path = Statistics;
 			sourceTree = "<group>";
 		};
+		197093D4237214F8005C3681 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				197093D723721D02005C3681 /* ServiceLocator.swift */,
+				197093D923721F84005C3681 /* KeychainService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		197804962337A22C0032DD76 = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +373,7 @@
 		197804A12337A22C0032DD76 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				197093D4237214F8005C3681 /* Services */,
 				197804B62337A30A0032DD76 /* App */,
 				19DEB419234A21E1004048D3 /* Extensions */,
 				1909F7982337A5A5002998CF /* Features */,
@@ -477,6 +493,7 @@
 			name = Groshy;
 			packageProductDependencies = (
 				19CFD33123428D5B00D5A347 /* SwiftUIFlux */,
+				197093DC23721FA3005C3681 /* KeychainAccess */,
 			);
 			productName = Groshy;
 			productReference = 1978049F2337A22C0032DD76 /* Groshy.app */;
@@ -508,6 +525,7 @@
 			mainGroup = 197804962337A22C0032DD76;
 			packageReferences = (
 				19CFD33023428D5B00D5A347 /* XCRemoteSwiftPackageReference "SwiftUIFlux" */,
+				197093DB23721FA3005C3681 /* XCRemoteSwiftPackageReference "KeychainAccess" */,
 			);
 			productRefGroup = 197804A02337A22C0032DD76 /* Products */;
 			projectDirPath = "";
@@ -567,6 +585,7 @@
 				1909F7AF2338C339002998CF /* ImageButton.swift in Sources */,
 				19CFD3482342A03900D5A347 /* KeyboardActions.swift in Sources */,
 				1930B783234552B0003C481C /* CategoriesGridCellComponent.swift in Sources */,
+				197093DA23721F84005C3681 /* KeychainService.swift in Sources */,
 				1909F7A22337B095002998CF /* CurrentTransactionValueView.swift in Sources */,
 				192166A12351E7A8001EFAE3 /* TransactionsState.swift in Sources */,
 				198F961E236C86E800A5B6B5 /* HomeContainerView.swift in Sources */,
@@ -582,6 +601,7 @@
 				19CFD33B2342902E00D5A347 /* AppAction.swift in Sources */,
 				19DEA0B8234D36B80075552C /* ScaledButtonStyle.swift in Sources */,
 				198F9620236C8A2F00A5B6B5 /* StatisticsView.swift in Sources */,
+				197093D823721D02005C3681 /* ServiceLocator.swift in Sources */,
 				192166AA235264C0001EFAE3 /* HashtagsState.swift in Sources */,
 				19CFD3462342A00D00D5A347 /* KeyboardFeature.swift in Sources */,
 				19DEB414234A1E9D004048D3 /* CategoriesState.swift in Sources */,
@@ -800,6 +820,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		197093DB23721FA3005C3681 /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
 		19CFD33023428D5B00D5A347 /* XCRemoteSwiftPackageReference "SwiftUIFlux" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Dimillian/SwiftUIFlux";
@@ -811,6 +839,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		197093DC23721FA3005C3681 /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 197093DB23721FA3005C3681 /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
 		19CFD33123428D5B00D5A347 /* SwiftUIFlux */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 19CFD33023428D5B00D5A347 /* XCRemoteSwiftPackageReference "SwiftUIFlux" */;

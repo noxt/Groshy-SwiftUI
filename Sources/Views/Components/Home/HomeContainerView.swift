@@ -19,7 +19,7 @@ struct HomeContainerView: View {
 
                 },
                 showStatistics: {
-                    withAnimation {
+                    withAnimation(.spring()) {
                         self.isStatisticsPresented.toggle()
                     }
                 }

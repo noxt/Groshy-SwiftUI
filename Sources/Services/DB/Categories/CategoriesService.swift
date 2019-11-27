@@ -6,7 +6,7 @@
 import Foundation
 
 
-final class CategoriesService : CategoriesServiceProtocol {
+final class CategoriesService : DBService, CategoriesServiceProtocol {
 
     typealias Model = Category
 

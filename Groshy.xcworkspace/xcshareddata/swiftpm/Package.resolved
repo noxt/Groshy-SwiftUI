@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "KeychainAccess",
+        "repositoryURL": "https://github.com/kishikawakatsumi/KeychainAccess",
+        "state": {
+          "branch": null,
+          "revision": "b920ad7df3c73189dcdd4aa05c540849b2010dbf",
+          "version": "4.1.0"
+        }
+      },
+      {
+        "package": "SwiftUIFlux",
+        "repositoryURL": "https://github.com/Dimillian/SwiftUIFlux",
+        "state": {
+          "branch": null,
+          "revision": "aa97f7f053941ecf288824a92294bf39ab118dd1",
+          "version": "0.4.5"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

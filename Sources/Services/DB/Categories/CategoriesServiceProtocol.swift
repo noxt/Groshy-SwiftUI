@@ -6,6 +6,10 @@
 import Foundation
 
 
-protocol CategoriesServiceProtocol: CRUDServiceProtocol {
+protocol CategoriesServiceProtocol {
+    
+    func load(completed: @escaping ((Result<[Category], Error>) -> Void))
+    func save(_ model: Category, completed: @escaping ((Result<Category, Error>) -> Void))
+    func delete(_ id: Category.ID, completed: @escaping ((Result<UUID, Error>) -> Void))
 
 }

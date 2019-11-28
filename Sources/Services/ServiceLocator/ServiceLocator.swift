@@ -6,13 +6,24 @@
 import Foundation
 
 
-final class ServiceLocator: ServiceLocatorProtocol {
+let serviceLocator = ServiceLocator(
+    keychainService: KeychainAccessService(),
+    categoriesService: CategoriesService()
+)
 
-    var keychainService: KeychainServiceProtocol
+
+final class ServiceLocator : ServiceLocatorProtocol {
+
+    private(set) var keychainService: KeychainServiceProtocol
+    private(set) var categoriesService: CategoriesServiceProtocol
 
 
-    init(keychainService: KeychainServiceProtocol) {
+    init(
+        keychainService: KeychainServiceProtocol,
+        categoriesService: CategoriesServiceProtocol
+    ) {
         self.keychainService = keychainService
+        self.categoriesService = categoriesService
     }
 
 }

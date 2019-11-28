@@ -71,8 +71,6 @@
 		196566282380821300008B62 /* KeychainServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196566272380821300008B62 /* KeychainServiceError.swift */; };
 		1965662A2380876200008B62 /* KeychainServiceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196566292380876200008B62 /* KeychainServiceKey.swift */; };
 		196566332384641200008B62 /* CategoriesServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196566322384641200008B62 /* CategoriesServiceProtocol.swift */; };
-		19656635238C481600008B62 /* CRUDServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19656634238C481600008B62 /* CRUDServiceProtocol.swift */; };
-		19656638238C483D00008B62 /* CRUDServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19656637238C483D00008B62 /* CRUDServiceError.swift */; };
 		1965663A238C487C00008B62 /* CategoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19656639238C487C00008B62 /* CategoriesService.swift */; };
 		19656640238C6C0800008B62 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1965663F238C6C0800008B62 /* DBService.swift */; };
 		19656642238EE79400008B62 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19656641238EE79400008B62 /* GoogleService-Info.plist */; };
@@ -174,8 +172,6 @@
 		196566272380821300008B62 /* KeychainServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceError.swift; sourceTree = "<group>"; };
 		196566292380876200008B62 /* KeychainServiceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceKey.swift; sourceTree = "<group>"; };
 		196566322384641200008B62 /* CategoriesServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesServiceProtocol.swift; sourceTree = "<group>"; };
-		19656634238C481600008B62 /* CRUDServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDServiceProtocol.swift; sourceTree = "<group>"; };
-		19656637238C483D00008B62 /* CRUDServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDServiceError.swift; sourceTree = "<group>"; };
 		19656639238C487C00008B62 /* CategoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesService.swift; sourceTree = "<group>"; };
 		1965663F238C6C0800008B62 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 		19656641238EE79400008B62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -490,20 +486,10 @@
 			path = KeychainAccess;
 			sourceTree = "<group>";
 		};
-		19656636238C482C00008B62 /* CRUD */ = {
-			isa = PBXGroup;
-			children = (
-				19656637238C483D00008B62 /* CRUDServiceError.swift */,
-				19656634238C481600008B62 /* CRUDServiceProtocol.swift */,
-			);
-			path = CRUD;
-			sourceTree = "<group>";
-		};
 		1965663E238C6B8200008B62 /* DB */ = {
 			isa = PBXGroup;
 			children = (
 				1965662B238458AB00008B62 /* Categories */,
-				19656636238C482C00008B62 /* CRUD */,
 				1965663F238C6C0800008B62 /* DBService.swift */,
 			);
 			path = DB;
@@ -821,14 +807,12 @@
 				1921669B2351E3F9001EFAE3 /* Hashtag.swift in Sources */,
 				1921669F2351E780001EFAE3 /* TransactionsReducer.swift in Sources */,
 				1909F7AA2338C15A002998CF /* DigitButton.swift in Sources */,
-				19656638238C483D00008B62 /* CRUDServiceError.swift in Sources */,
 				1909F7AF2338C339002998CF /* ImageButton.swift in Sources */,
 				19CFD3482342A03900D5A347 /* KeyboardActions.swift in Sources */,
 				1930B783234552B0003C481C /* CategoriesGridView_Cell_Component.swift in Sources */,
 				197093DA23721F84005C3681 /* KeychainService_KeychainAccess.swift in Sources */,
 				1909F7A22337B095002998CF /* CurrentTransactionValueView.swift in Sources */,
 				192166A12351E7A8001EFAE3 /* TransactionsState.swift in Sources */,
-				19656635238C481600008B62 /* CRUDServiceProtocol.swift in Sources */,
 				198F961E236C86E800A5B6B5 /* HomeContainerView.swift in Sources */,
 				19F6C0B5234D1A8C001352C7 /* Array+Split.swift in Sources */,
 				19DEB40F234A1DBD004048D3 /* CategoryStyle.swift in Sources */,

@@ -5,15 +5,16 @@
 
 import Foundation
 import Firebase
-import CodableFirebase
+import FirebaseFirestoreSwift
+//import CodableFirebase
 
 
 final class CategoriesService : DBService, CategoriesServiceProtocol {
 
     typealias Model = Category
 
-    private lazy var categoriesRef = {
-        db.child("categories")
+    private lazy var categoriesDB = {
+        Firestore.firestore().collection("categories")
     }()
 
 }
@@ -24,28 +25,48 @@ final class CategoriesService : DBService, CategoriesServiceProtocol {
 
 extension CategoriesService {
 
-    func load(completed: @escaping ((Result<[Category], CRUDServiceError>) -> Void)) {
-        categoriesRef.observeSingleEvent(of: .value) { (snapshot) in
-            guard let value = snapshot.value else {
-                completed(.success([]))
+    func load(completed: @escaping ((Result<[Category], Error>) -> Void)) {
+        categoriesDB.getDocuments { (querySnapshot, error) in
+            guard error == nil else {
+                completed(.failure(error!))
                 return
             }
+            let categories = querySnapshot!.documents.map { (document) -> Category in
+                let data = document.data()
+                return Category(
+                    id: UUID(uuidString: document.documentID)!,
+                    title: data["title"] as! String,
+                    icon: Category.Icon(rawValue: data["icon"] as! String)!,
+                    style: Category.Style(number: data["style"] as! Int)
+                )
+            }
+            completed(.success(categories))
+        }
+    }
 
-            do {
-                let categories = try FirebaseDecoder().decode([String: Category].self, from: value)
-                completed(.success(Array(categories.values)))
-            } catch let error {
+    func save(_ model: Category, completed: @escaping ((Result<Category, Error>) -> Void)) {
+        let data: [String : Any] = [
+            "title": model.title,
+            "icon": model.icon.rawValue,
+            "style": model.style.number
+        ]
+        categoriesDB.document(model.id.uuidString).setData(data) { (error) in
+            if let error = error {
+                completed(.failure(error))
+            } else {
+                completed(.success(model))
             }
         }
     }
 
-    func save(_ model: Category, completed: ((Result<Category, CRUDServiceError>) -> Void)) {
-        let data = try! FirebaseEncoder().encode(model)
-        categoriesRef.setValue(data, forKey: model.id.uuidString)
-    }
-
-    func delete(_ id: Category.ID, completed: ((Result<UUID, CRUDServiceError>) -> Void)) {
-        categoriesRef.child(id.uuidString).removeValue()
+    func delete(_ id: Category.ID, completed: @escaping ((Result<UUID, Error>) -> Void)) {
+        categoriesDB.document(id.uuidString).delete { (error) in
+            if let error = error {
+                completed(.failure(error))
+            } else {
+                completed(.success(id))
+            }
+        }
     }
 
 }

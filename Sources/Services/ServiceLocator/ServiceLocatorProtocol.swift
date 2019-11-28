@@ -7,5 +7,6 @@ import Foundation
 
 
 protocol ServiceLocatorProtocol {
-    var keychainService: KeychainServiceProtocol { get set }
+    var keychainService: KeychainServiceProtocol { get }
+    var categoriesService: CategoriesServiceProtocol { get }
 }

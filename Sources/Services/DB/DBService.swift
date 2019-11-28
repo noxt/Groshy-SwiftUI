@@ -4,9 +4,9 @@
 //
 
 import Foundation
-import FirebaseFirestore
+import Firebase
 
 
 class DBService {
-    lazy var db = Firestore.firestore()
+    lazy var db = Database.database().reference()
 }

@@ -10,8 +10,8 @@ protocol CRUDServiceProtocol {
 
     associatedtype Model: Identifiable
 
-    func load(completed: ((Result<Model, CRUDServiceError>) -> Void))
-    func save(_ model: Model, completed: ((Result<Model, CRUDServiceError>) -> Void))
-    func delete(_ id: Model.ID, completed: ((Result<Model.ID, CRUDServiceError>) -> Void))
+    func load(completed: @escaping ((Result<[Model], CRUDServiceError>) -> Void))
+    func save(_ model: Model, completed: @escaping ((Result<Model, CRUDServiceError>) -> Void))
+    func delete(_ id: Model.ID, completed: @escaping ((Result<Model.ID, CRUDServiceError>) -> Void))
 
 }

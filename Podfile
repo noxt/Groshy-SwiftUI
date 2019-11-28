@@ -4,5 +4,6 @@ target 'Groshy' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
   pod 'FirebaseFirestoreSwift'
+  pod 'CodableFirebase'
 
 end

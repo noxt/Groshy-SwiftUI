@@ -60,3 +60,21 @@ struct AddCategoryView: View {
     }
 
 }
+
+
+// MARK: - PreviewProvider
+
+struct AddCategoryView_Previews: PreviewProvider {
+    static var previews: some View {
+        AddCategoryView(
+            createCategory: { (title, icon, style) in
+                print(title)
+            },
+            dismiss: {
+                print("dismiss")
+            }
+        )
+            .previewLayout(.sizeThatFits)
+            .padding(8)
+    }
+}

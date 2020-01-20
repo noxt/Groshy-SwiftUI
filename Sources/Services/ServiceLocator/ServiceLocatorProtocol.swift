@@ -9,4 +9,6 @@ import Foundation
 protocol ServiceLocatorProtocol {
     var keychainService: KeychainServiceProtocol { get }
     var categoriesService: CategoriesServiceProtocol { get }
+    var transactionsService: TransactionsServiceProtocol { get }
+    var syncService: SyncServiceProtocol { get }
 }

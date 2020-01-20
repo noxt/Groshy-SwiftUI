@@ -6,8 +6,8 @@
 import SwiftUI
 
 
-extension HomeBottomView {
-    struct AddHashtagButton: View {
+extension HomeView.BottomView {
+    public struct AddHashtagButton: View {
 
         let isSelected: Bool
         let action: () -> Void
@@ -23,5 +23,26 @@ extension HomeBottomView {
             .buttonStyle(ScaledButtonStyle())
         }
 
+    }
+}
+
+
+// MARK: - PreviewProvider
+
+struct HomeBottomView_AddHashtagButton_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            HomeView.BottomView.AddHashtagButton(
+                isSelected: false,
+                action: { }
+            )
+
+            HomeView.BottomView.AddHashtagButton(
+                isSelected: true,
+                action: { }
+            )
+        }
+            .previewLayout(.sizeThatFits)
+            .padding(8)
     }
 }

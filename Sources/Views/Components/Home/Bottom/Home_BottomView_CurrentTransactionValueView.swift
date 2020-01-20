@@ -6,7 +6,7 @@
 import SwiftUI
 
 
-extension HomeBottomView {
+extension HomeView.BottomView {
     struct CurrentTransactionValueView: View {
 
         let title: String
@@ -23,5 +23,6 @@ extension HomeBottomView {
             .background(Color.secondaryBackground)
             .cornerRadius(4)
         }
+
     }
 }

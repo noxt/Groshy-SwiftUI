@@ -17,7 +17,7 @@ struct HomeView: View {
 
             VStack {
                 HStack(alignment: .bottom) {
-                    HomeHeaderViewComponent()
+                    HeaderView.Component()
 
                     VStack(spacing: 0) {
                         Button(action: {}) {
@@ -53,7 +53,7 @@ struct HomeView: View {
 
                 Spacer()
 
-                HomeBottomViewComponent()
+                BottomView.Component()
             }
             .padding(16)
         }

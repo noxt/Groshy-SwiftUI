@@ -47,6 +47,7 @@ struct CustomTextField: UIViewRepresentable {
     func updateUIView(_ uiView: WrappableTextField, context: UIViewRepresentableContext<CustomTextField>) {
         uiView.setContentHuggingPriority(.defaultHigh, for: .vertical)
         uiView.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        tmpView.becomeFirstResponder()
     }
 
 }

@@ -12,7 +12,7 @@ import Combine
 let store = Store<AppFeature.State>(
     reducer: AppFeature.reduce,
     middleware: [loggingMiddleware],
-    state: AppFeature.State()
+    state: AppFeature.State.loadFromArchive() ?? AppFeature.State.initial
 )
 
 
@@ -37,7 +37,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.makeKeyAndVisible()
 
             archiveTimer = Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true, block: { a in
-                store.state.archiveState()
+                AppFeature.State.archive(state: store.state)
 //                store.dispatch(action: AppFeature.Actions.SaveState())
             })
         }
@@ -45,7 +45,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidEnterBackground(_ scene: UIScene) {
 //        store.dispatch(action: AppFeature.Actions.SaveState())
-        store.state.archiveState()
+        AppFeature.State.archive(state: store.state)
         store.dispatch(action: AppFeature.Actions.DidEnterBackground())
     }
 

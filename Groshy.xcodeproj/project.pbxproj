@@ -560,13 +560,13 @@
 		197804A12337A22C0032DD76 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				197093D4237214F8005C3681 /* Services */,
 				197804B62337A30A0032DD76 /* App */,
 				19DEB419234A21E1004048D3 /* Extensions */,
 				1909F7982337A5A5002998CF /* Features */,
 				19CFD33C234290D500D5A347 /* Middlewares */,
 				194A9B86234A18BC003F4C6A /* Models */,
 				197804B72337A3420032DD76 /* Resources */,
+				197093D4237214F8005C3681 /* Services */,
 				19CFD3432342953800D5A347 /* Views */,
 			);
 			path = Sources;
@@ -1065,6 +1065,7 @@
 			baseConfigurationReference = 00B134A6A92BC30D809E2964 /* Pods-Groshy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Sources/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = EP4DBFYCG5;
@@ -1076,6 +1077,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = groshy.io.Groshy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1086,6 +1088,7 @@
 			baseConfigurationReference = A522B8842924C9748E412964 /* Pods-Groshy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Sources/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = EP4DBFYCG5;
@@ -1097,6 +1100,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = groshy.io.Groshy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

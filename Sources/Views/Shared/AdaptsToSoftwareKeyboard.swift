@@ -11,12 +11,13 @@ import UIKit
 
 struct AdaptsToSoftwareKeyboard: ViewModifier {
 
-    @State var currentHeight: CGFloat = 0
+    @State private var currentHeight: CGFloat = 0
 
     func body(content: Content) -> some View {
         content
-            .padding(.bottom, currentHeight).animation(.easeInOut(duration: 0.25))
-            .edgesIgnoringSafeArea(currentHeight == 0 ? Edge.Set() : .bottom)
+            .padding(.bottom, currentHeight)
+            .animation(.easeInOut(duration: 0.25))
+            .edgesIgnoringSafeArea(currentHeight == 0 ? [] : .bottom)
             .onAppear(perform: subscribeToKeyboardChanges)
     }
 

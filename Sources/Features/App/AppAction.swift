@@ -15,7 +15,7 @@ extension AppFeature {
                 serviceLocator.syncService.loadState(for: "user 1") { (result) in
                     switch result {
                     case let .success(state):
-                        store.state = state ?? AppFeature.State()
+                        store.state = state ?? AppFeature.State.initial
                     case let .failure(error):
                         print("[Error][LoadState] \(error)")
                     }
@@ -27,7 +27,7 @@ extension AppFeature {
             func execute(state: FluxState?, dispatch: @escaping DispatchFunction) {
                 serviceLocator.syncService.saveState(for: "user 1", state: state as! AppFeature.State) { (result) in
                     switch result {
-                    case let .success(state):
+                    case .success:
                         print("[Success][SaveState]")
                     case let .failure(error):
                         print("[Error][SaveState] \(error)")
